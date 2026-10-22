@@ -1,0 +1,7 @@
+# 向量库：运行 python ingest.py 即可重建
+chroma_db/
+
+# Python
+__pycache__/
+*.pyc
+.venv/

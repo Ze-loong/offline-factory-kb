@@ -1,0 +1,112 @@
+{
+  "model": "qwen2.5:7b",
+  "source": "results/eval_v2_7b*.json",
+  "reviews": {
+    "V02": [
+      {
+        "verdict": "pass_note",
+        "comment": "答对温度和回火次数，但把'至少两次'说成'两次'（与 3b 第一轮相同的细节损失）",
+        "answer_hash": "770fb6e30a61",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "V06": [
+      {
+        "verdict": "real_error",
+        "comment": "检索失败（磨床章节排第 8，没进 top3），模型拒答本身是对的，错在检索；与 3b 相同",
+        "answer_hash": "25461403ce78",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "V08": [
+      {
+        "verdict": "real_error",
+        "comment": "表格分档错误：事假 2 天应为部门经理，答成直属主管。第一轮（4 份资料）时 7b 答对过，这次上下文多了'出差审批'片段后两次都答错",
+        "answer_hash": "05de1fca8998",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "B01": [
+      {
+        "verdict": "pass_note",
+        "comment": "包含真空炉特有处理（停止加热、保持真空、不得开门降温）和通用上报流程，事实都对；但把四种报警的处理措施连成一串，没有按报警类型分开，现场读起来容易混",
+        "answer_hash": "699445e43ac1",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20"
+      },
+      {
+        "verdict": "pass_note",
+        "comment": "包含真空炉特有处理（停止加热、保持真空、不得开门降温）和通用上报流程，事实都对；但把四种报警的处理措施连成一串，没有按报警类型分开，现场读起来容易混",
+        "answer_hash": "728ecb0d5c94",
+        "first_seen_in": "eval_v2_7b_run2.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "B12": [
+      {
+        "verdict": "pass_note",
+        "comment": "只给 H13/Cr12MoV 的规则，没说明按钢种不同（与 3b 相同）",
+        "answer_hash": "c462c1769510",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "P03": [
+      {
+        "verdict": "real_error",
+        "comment": "不完整：只说'3 个月以后'，漏了'带教期满须通过实操考核、取得上岗证'这个前提，会被理解成满 3 个月就能自己开",
+        "answer_hash": "1b55cba16370",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "P04": [
+      {
+        "verdict": "real_error",
+        "comment": "检索失败（期望来源排第 4），7b 在没有相关片段的上下文下判答不了，模型行为符合'不用常识补充'，错在检索；对比：3b 同样上下文下用常识答'对'了",
+        "answer_hash": "25461403ce78",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "C02": [
+      {
+        "verdict": "real_error",
+        "comment": "与 3b 相同：方案 A 所在的表格片段没进 top3，只看到方案 B 那一行，把 1100～1120℃ 当成方案 A",
+        "answer_hash": "bc1ff8354233",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "C03": [
+      {
+        "verdict": "real_error",
+        "comment": "与 3b 相同：漏了'5 分钟内报班组长'，异常上报流程章节没进 top3",
+        "answer_hash": "489736d05045",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "C07": [
+      {
+        "verdict": "real_error",
+        "comment": "与 3b 相同：真空炉点检章节排第 4 没进 top3，判答不了",
+        "answer_hash": "25461403ce78",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "N04": [
+      {
+        "verdict": "real_error",
+        "comment": "幻觉：资料只写'满 1 年不满 10 年 5 天'，7b 编出'工龄 15 年 10 天'（3b 编的是 15 天）",
+        "answer_hash": "95bab5573c5c",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20"
+      }
+    ]
+  }
+}

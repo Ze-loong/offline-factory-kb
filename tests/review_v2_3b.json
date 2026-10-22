@@ -1,0 +1,302 @@
+{
+  "model": "qwen2.5:3b",
+  "source": "results/eval_v2_3b*.json（基线 + 第 5 步阈值校准各次运行）",
+  "reviews": {
+    "V02": [
+      {
+        "verdict": "real_error",
+        "comment": "误拒。两个期望片段都在 top3（排第 1、2），模型仍判 answerable=false；第 3 个片段是 Cr12MoV 回火参数（相似资料）。v1（只有 4 份资料）时这题答对了 → 回归，疑似混淆资料进入上下文后 3b 不敢答",
+        "answer_hash": "25461403ce78",
+        "date": "2026-10-20"
+      }
+    ],
+    "V06": [
+      {
+        "verdict": "real_error",
+        "comment": "检索失败：磨床章节排第 8，top3 是铣床点检、故障手册'主轴过热'、Cr12MoV 淬火；v1 时磨床排第 2 → 资料变多后的检索回归。模型正确地判断资料里没有磨床冷却液 → 拒答本身是对的，错在检索",
+        "answer_hash": "25461403ce78",
+        "date": "2026-10-20"
+      }
+    ],
+    "V08": [
+      {
+        "verdict": "real_error",
+        "comment": "表格分档错误：事假 2 天应为部门经理（1～3 天档），答成直属主管；与 v1 相同的已知问题",
+        "answer_hash": "31e887b199d9",
+        "date": "2026-10-20"
+      }
+    ],
+    "V11": [
+      {
+        "verdict": "acceptable",
+        "comment": "如实转述'按另行发布的《差旅住宿标准》执行，本制度不作规定'，没有编造金额；属事先标注的边界题",
+        "answer_hash": "055f12e6c369",
+        "date": "2026-10-20"
+      }
+    ],
+    "B01": [
+      {
+        "verdict": "real_error",
+        "comment": "部分正确：说了急停、挂牌、5 分钟报班组长、15 分钟通知设备员，但内容来自片段 2（通用上报流程），漏了真空炉特有的处理（停止加热、保持真空、停电不得开门降温）；且 cited 只标了片段 1，引用与内容不符",
+        "answer_hash": "37d2686973c0",
+        "date": "2026-10-20"
+      },
+      {
+        "verdict": "real_error",
+        "comment": "同基线：只给通用上报流程，漏了真空炉特有处理（停止加热、保持真空等），引用与内容不符",
+        "answer_hash": "a2ca5a6c7c62",
+        "first_seen_in": "eval_v2_3b_t050_run2.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "B04": [
+      {
+        "verdict": "real_error",
+        "comment": "幻觉（答非所问）：资料只有出厂检验，模型把出厂检验的表面质量、化学成分说成'进厂检验项目'",
+        "answer_hash": "92d22fd4b07f",
+        "date": "2026-10-20"
+      },
+      {
+        "verdict": "real_error",
+        "comment": "同基线：把出厂检验项目（表面质量、标识、化学成分）说成进厂检验项目",
+        "answer_hash": "1962bfb6e7b6",
+        "first_seen_in": "eval_v2_3b_t050_run2.json",
+        "date": "2026-10-20"
+      },
+      {
+        "verdict": "real_error",
+        "comment": "同基线：出厂检验冒充进厂检验",
+        "answer_hash": "ad84bf44a1c8",
+        "first_seen_in": "eval_v2_3b_t045.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "B05": [
+      {
+        "verdict": "real_error",
+        "comment": "不完整：只说了油水分离、分别收集（还重复了一遍），漏了'倒入危废暂存间专用收集桶、贴标签登记、严禁倒下水道、委托有资质单位处置'",
+        "answer_hash": "ffcfcf2afe11",
+        "date": "2026-10-20"
+      },
+      {
+        "verdict": "real_error",
+        "comment": "不完整：只说油水分离、分别收集，漏了危废暂存间收集桶等",
+        "answer_hash": "c11588770d2f",
+        "first_seen_in": "eval_v2_3b_t055.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "B07": [
+      {
+        "verdict": "real_error",
+        "comment": "幻觉：'劳保鞋需要由经过培训的人员进行更换，具体由班组长负责'——把磨床'更换砂轮须由经过培训的人员进行'张冠李戴到劳保鞋",
+        "answer_hash": "671a579fa5c4",
+        "date": "2026-10-20"
+      }
+    ],
+    "B08": [
+      {
+        "verdict": "real_error",
+        "comment": "幻觉：资料只有夜班时间，模型编出'有上下班的考勤补贴'",
+        "answer_hash": "a28086c510e5",
+        "date": "2026-10-20"
+      },
+      {
+        "verdict": "acceptable",
+        "comment": "回答'夜班有考勤，但没有提到夜班有额外的补贴'——如实说明资料没提到，没有编造（同 V11 口径）",
+        "answer_hash": "078ce707dbc1",
+        "first_seen_in": "eval_v2_3b_t050_run2.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "B10": [
+      {
+        "verdict": "real_error",
+        "comment": "不完整：只答了差旅报销 10 个工作日，漏了日常费用 30 天（问题没限定是差旅）",
+        "answer_hash": "dc2684670aa8",
+        "date": "2026-10-20"
+      },
+      {
+        "verdict": "real_error",
+        "comment": "同基线：只答差旅 10 个工作日，漏日常费用 30 天",
+        "answer_hash": "b9489b993a93",
+        "first_seen_in": "eval_v2_3b_t050_run2.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "P03": [
+      {
+        "verdict": "real_error",
+        "comment": "不完整：说了要带教期满考核合格，但没说带教期多长（3 个月），而'多久'正是问题核心",
+        "answer_hash": "49a5a9ab00cc",
+        "date": "2026-10-20"
+      },
+      {
+        "verdict": "real_error",
+        "comment": "不完整：没说带教期 3 个月",
+        "answer_hash": "d663342d1ec6",
+        "first_seen_in": "eval_v2_3b_t055.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "T01": [
+      {
+        "verdict": "real_error",
+        "comment": "表格分档错误：病假 5 天（3 天以上档）应为人力资源部，答成部门经理，还混入了出差审批'超过 3 天或出境出差由分管副总经理审批'",
+        "answer_hash": "cf7d1b0f5ed4",
+        "date": "2026-10-20"
+      }
+    ],
+    "T03": [
+      {
+        "verdict": "real_error",
+        "comment": "分档 + 计算错误：30 件属 11～50 件档，抽 20% = 6 件，答成 3 件",
+        "answer_hash": "e8956011a156",
+        "date": "2026-10-20"
+      }
+    ],
+    "C01": [
+      {
+        "verdict": "real_error",
+        "comment": "误拒：top3 全是 P20 工艺卡（回火、淬火、检验），两个期望片段都在，模型仍判 answerable=false",
+        "answer_hash": "25461403ce78",
+        "date": "2026-10-20"
+      }
+    ],
+    "C02": [
+      {
+        "verdict": "real_error",
+        "comment": "混淆：淬火表被拆成 2 片，方案 A 所在的 #3 没进 top3，进来的是只含方案 B 的 #4；模型把方案 B 的 1100～1120℃ 当成方案 A（片段里明确写了'方案 B'）。按章节算检索'命中'，实际需要的那一片没检索到",
+        "answer_hash": "662200604f2a",
+        "date": "2026-10-20"
+      }
+    ],
+    "C03": [
+      {
+        "verdict": "real_error",
+        "comment": "不完整：只答了故障手册里'停机报设备员…报设备动力部经理'，漏了'5 分钟内报班组长'；异常上报流程章节排第 7，没进 top3（top3 里有两片都是'主轴过热'）",
+        "answer_hash": "aa4dae089db4",
+        "date": "2026-10-20"
+      },
+      {
+        "verdict": "real_error",
+        "comment": "同基线：漏了'5 分钟内报班组长'，异常上报流程章节没进 top3",
+        "answer_hash": "c8867309f4cc",
+        "first_seen_in": "eval_v2_3b_t050_run2.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "C07": [
+      {
+        "verdict": "real_error",
+        "comment": "检索不全 + 误拒：真空炉点检章节排第 4，没进 top3；top3 只有 H13 淬火参数这一组",
+        "answer_hash": "25461403ce78",
+        "date": "2026-10-20"
+      }
+    ],
+    "N04": [
+      {
+        "verdict": "real_error",
+        "comment": "幻觉：资料只写'工龄满 1 年不满 10 年 5 天'，模型编出'工龄 15 年有 15 天'",
+        "answer_hash": "f6eea1626f42",
+        "date": "2026-10-20"
+      }
+    ],
+    "P04": [
+      {
+        "verdict": "false_pass",
+        "comment": "前半句正确（不能用水，用泡沫/干粉），后面编了'应立即停止动火作业，并由安全环保部经理审批后采取相应措施'——着火现场等审批是误导",
+        "answer_hash": "2d2e4fbd4c13",
+        "date": "2026-10-20"
+      },
+      {
+        "verdict": "false_pass",
+        "comment": "答案内容碰巧正确（不能用水、用干粉/泡沫），但检索到的 3 个片段（动火审批、危废处理、真空炉报警）里都没有这条规定，期望来源'新员工手册·应急与疏散'排第 4 没进上下文——是模型用常识补的，违反提示词'不得用常识补充'。第 6 步对比 7b 时发现（7b 在同样上下文下判答不了），原判 pass_note 改为 false_pass",
+        "answer_hash": "89f3151a816e",
+        "first_seen_in": "eval_v2_3b_t050_run2.json",
+        "date": "2026-10-20",
+        "revised": "2026-10-20 第 6 步"
+      },
+      {
+        "verdict": "false_pass",
+        "comment": "同基线：编了'应立即停止动火作业，并由安全环保部经理审批后采取相应措施'，着火现场等审批是误导",
+        "answer_hash": "c534ec3f623c",
+        "first_seen_in": "eval_v2_3b_t045.json",
+        "date": "2026-10-20"
+      },
+      {
+        "verdict": "real_error",
+        "comment": "阈值造成的误拒：top1 0.527 < 0.55，第 1 层直接拦下",
+        "answer_hash": "25461403ce78",
+        "first_seen_in": "eval_v2_3b_t055.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "B12": [
+      {
+        "verdict": "pass_note",
+        "comment": "只给了 H13 / Cr12MoV 的处理规则（重新回火、淬火不足须技术质量部批准返工），没说明按钢种不同；P20 硬度偏低是重新调质。问题没限定钢种，按通过计",
+        "answer_hash": "7186139cb017",
+        "date": "2026-10-20"
+      },
+      {
+        "verdict": "pass_note",
+        "comment": "同基线：只给 H13/Cr12MoV 的规则，没说明按钢种不同",
+        "answer_hash": "535aba85eeaf",
+        "first_seen_in": "eval_v2_3b_t050_run2.json",
+        "date": "2026-10-20"
+      },
+      {
+        "verdict": "pass_note",
+        "comment": "同基线：只给 H13/Cr12MoV 的规则，没说明按钢种不同",
+        "answer_hash": "efb03bf37179",
+        "first_seen_in": "eval_v2_3b_t045.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "T05": [
+      {
+        "verdict": "pass_note",
+        "comment": "事先担心会多加总经理，实际没有，答对",
+        "answer_hash": "21e8649704f5",
+        "date": "2026-10-20"
+      }
+    ],
+    "N11": [
+      {
+        "verdict": "real_error",
+        "comment": "幻觉：编出'监护人不需要额外的资质'（资料没有规定监护人资质）。0.45 下第 3 个片段（0.4948）也进了上下文，但该片段与监护人无关，变化不能归因于阈值",
+        "answer_hash": "dc7eda071e04",
+        "first_seen_in": "eval_v2_3b_t045.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "V09": [
+      {
+        "verdict": "real_error",
+        "comment": "阈值造成的误拒：top1 0.547 < 0.55，第 1 层直接拦下，没有调用模型",
+        "answer_hash": "25461403ce78",
+        "first_seen_in": "eval_v2_3b_t055.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "B03": [
+      {
+        "verdict": "real_error",
+        "comment": "阈值造成的误拒：top1 0.528 < 0.55，第 1 层直接拦下",
+        "answer_hash": "25461403ce78",
+        "first_seen_in": "eval_v2_3b_t055.json",
+        "date": "2026-10-20"
+      }
+    ],
+    "T02": [
+      {
+        "verdict": "real_error",
+        "comment": "分档错误：油库旁 5 米属于一级动火（安全环保部经理审批），答成二级动火、车间主任。0.55 下上下文只剩 1 个片段（基线 3 个），基线答对；是否由阈值造成无法与随机波动区分",
+        "answer_hash": "d143157f35df",
+        "first_seen_in": "eval_v2_3b_t055.json",
+        "date": "2026-10-20"
+      }
+    ]
+  }
+}

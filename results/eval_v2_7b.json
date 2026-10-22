@@ -1,0 +1,2697 @@
+{
+  "model": "qwen2.5:7b",
+  "threshold": 0.5,
+  "top_k": 3,
+  "generated": "2026-10-20 04:03:44",
+  "questions_sha256": "f13f72ab446ef961413ed0ecebca97e3fb7f7041ccdf90300fe4b72c9037070c",
+  "summary": {
+    "all": {
+      "by_category": {
+        "direct": {
+          "n": 1,
+          "retrieval_hit": 0,
+          "retrieval_hit_all": 0,
+          "auto_correct": 0,
+          "final_correct": 0,
+          "false_refusal": 1,
+          "wrong_answer": 0,
+          "layer": {
+            "1": 0,
+            "2": 1,
+            "3": 0
+          }
+        },
+        "paraphrase": {
+          "n": 5,
+          "retrieval_hit": 4,
+          "retrieval_hit_all": 4,
+          "auto_correct": 3,
+          "final_correct": 3,
+          "false_refusal": 1,
+          "wrong_answer": 1,
+          "layer": {
+            "1": 0,
+            "2": 1,
+            "3": 0
+          }
+        },
+        "table_tier": {
+          "n": 11,
+          "retrieval_hit": 11,
+          "retrieval_hit_all": 11,
+          "auto_correct": 10,
+          "final_correct": 10,
+          "false_refusal": 0,
+          "wrong_answer": 1,
+          "layer": {
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        "cross_chunk": {
+          "n": 5,
+          "retrieval_hit": 5,
+          "retrieval_hit_all": 3,
+          "auto_correct": 2,
+          "final_correct": 2,
+          "false_refusal": 1,
+          "wrong_answer": 2,
+          "layer": {
+            "1": 0,
+            "2": 1,
+            "3": 0
+          }
+        },
+        "confusable": {
+          "n": 12,
+          "retrieval_hit": 12,
+          "retrieval_hit_all": 12,
+          "auto_correct": 12,
+          "final_correct": 12,
+          "false_refusal": 0,
+          "wrong_answer": 0,
+          "layer": {
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        "negative_near": {
+          "n": 5,
+          "correct_refusal": 4,
+          "hallucination_auto": 1,
+          "final_correct": 4,
+          "layer": {
+            "1": 0,
+            "2": 4,
+            "3": 0
+          }
+        },
+        "ALL_ANSWERABLE": {
+          "n": 34,
+          "retrieval_hit": 32,
+          "retrieval_hit_all": 30,
+          "auto_correct": 27,
+          "final_correct": 27,
+          "false_refusal": 3,
+          "wrong_answer": 4,
+          "layer": {
+            "1": 0,
+            "2": 3,
+            "3": 0
+          }
+        },
+        "ALL_NEGATIVE": {
+          "n": 5,
+          "correct_refusal": 4,
+          "hallucination_auto": 1,
+          "final_correct": 4,
+          "layer": {
+            "1": 0,
+            "2": 4,
+            "3": 0
+          }
+        }
+      },
+      "overall": {
+        "n": 39,
+        "layer": {
+          "1": 0,
+          "2": 7,
+          "3": 0
+        },
+        "answered": 32,
+        "retrieve_s": {
+          "median": 0.08,
+          "p90": 0.11,
+          "n": 39
+        },
+        "llm_s": {
+          "median": 19.56,
+          "p90": 27.46,
+          "n": 39
+        },
+        "top3_same_section_dup": 4
+      }
+    },
+    "test": {
+      "by_category": {
+        "direct": {
+          "n": 1,
+          "retrieval_hit": 0,
+          "retrieval_hit_all": 0,
+          "auto_correct": 0,
+          "final_correct": 0,
+          "false_refusal": 1,
+          "wrong_answer": 0,
+          "layer": {
+            "1": 0,
+            "2": 1,
+            "3": 0
+          }
+        },
+        "paraphrase": {
+          "n": 4,
+          "retrieval_hit": 4,
+          "retrieval_hit_all": 4,
+          "auto_correct": 3,
+          "final_correct": 3,
+          "false_refusal": 0,
+          "wrong_answer": 1,
+          "layer": {
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        "table_tier": {
+          "n": 9,
+          "retrieval_hit": 9,
+          "retrieval_hit_all": 9,
+          "auto_correct": 8,
+          "final_correct": 8,
+          "false_refusal": 0,
+          "wrong_answer": 1,
+          "layer": {
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        "cross_chunk": {
+          "n": 4,
+          "retrieval_hit": 4,
+          "retrieval_hit_all": 3,
+          "auto_correct": 2,
+          "final_correct": 2,
+          "false_refusal": 0,
+          "wrong_answer": 2,
+          "layer": {
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        "confusable": {
+          "n": 10,
+          "retrieval_hit": 10,
+          "retrieval_hit_all": 10,
+          "auto_correct": 10,
+          "final_correct": 10,
+          "false_refusal": 0,
+          "wrong_answer": 0,
+          "layer": {
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        "negative_near": {
+          "n": 4,
+          "correct_refusal": 3,
+          "hallucination_auto": 1,
+          "final_correct": 3,
+          "layer": {
+            "1": 0,
+            "2": 3,
+            "3": 0
+          }
+        },
+        "ALL_ANSWERABLE": {
+          "n": 28,
+          "retrieval_hit": 27,
+          "retrieval_hit_all": 26,
+          "auto_correct": 23,
+          "final_correct": 23,
+          "false_refusal": 1,
+          "wrong_answer": 4,
+          "layer": {
+            "1": 0,
+            "2": 1,
+            "3": 0
+          }
+        },
+        "ALL_NEGATIVE": {
+          "n": 4,
+          "correct_refusal": 3,
+          "hallucination_auto": 1,
+          "final_correct": 3,
+          "layer": {
+            "1": 0,
+            "2": 3,
+            "3": 0
+          }
+        }
+      },
+      "overall": {
+        "n": 32,
+        "layer": {
+          "1": 0,
+          "2": 4,
+          "3": 0
+        },
+        "answered": 28,
+        "retrieve_s": {
+          "median": 0.08,
+          "p90": 0.1,
+          "n": 32
+        },
+        "llm_s": {
+          "median": 19.97,
+          "p90": 27.46,
+          "n": 32
+        },
+        "top3_same_section_dup": 4
+      }
+    }
+  },
+  "records": [
+    {
+      "id": "V02",
+      "category": "cross_chunk",
+      "split": "test",
+      "origin": "v1",
+      "question": "H13 钢淬火加热温度是多少，回火要做几次？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "热处理工艺卡-H13.md#4",
+          "source": "热处理工艺卡-H13.md#三、回火工艺参数",
+          "score": 0.7553,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "热处理工艺卡-H13.md#3",
+          "source": "热处理工艺卡-H13.md#二、淬火工艺参数",
+          "score": 0.7468,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#5",
+          "source": "热处理工艺卡-Cr12MoV.md#三、回火工艺参数",
+          "score": 0.7002,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.7553,
+      "answer": "H13 钢淬火加热温度为 1020～1040℃，回火需要做两次。",
+      "answer_hash": "770fb6e30a61",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"H13 钢淬火加热温度为 1020～1040℃，回火需要做两次。\",\n  \"cited\": [1, 2]\n}",
+      "retrieve_s": 0.29,
+      "llm_s": 29.35,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "1020~1040",
+        [
+          "两次",
+          "2次",
+          "二次"
+        ]
+      ],
+      "expected_source": [
+        [
+          "热处理工艺卡-H13.md#二、淬火工艺参数"
+        ],
+        [
+          "热处理工艺卡-H13.md#三、回火工艺参数"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        2,
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": {
+        "verdict": "pass_note",
+        "comment": "答对温度和回火次数，但把'至少两次'说成'两次'（与 3b 第一轮相同的细节损失）",
+        "answer_hash": "770fb6e30a61",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20",
+        "stale": false
+      },
+      "final_correct": true
+    },
+    {
+      "id": "V03",
+      "category": "table_tier",
+      "split": "test",
+      "origin": "v1",
+      "question": "在车间里的设备上焊接，动火要谁审批？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "安全生产管理制度.md#3",
+          "source": "安全生产管理制度.md#二、动火作业审批",
+          "score": 0.7237,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "新员工安全培训手册.md#4",
+          "source": "新员工安全培训手册.md#三、必须牢记的安全规定",
+          "score": 0.594,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "安全生产管理制度.md#4",
+          "source": "安全生产管理制度.md#三、设备异常上报流程",
+          "score": 0.5902,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.7237,
+      "answer": "在车间里的设备上焊接属于二级动火作业，需要由车间主任审批，同时安全员需要进行现场确认。",
+      "answer_hash": "34ce3d8c9a7c",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"在车间里的设备上焊接属于二级动火作业，需要由车间主任审批，同时安全员需要进行现场确认。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.09,
+      "llm_s": 22.16,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "车间主任"
+      ],
+      "expected_source": [
+        [
+          "安全生产管理制度.md#二、动火作业审批"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "V06",
+      "category": "direct",
+      "split": "test",
+      "origin": "v1",
+      "question": "磨床冷却液浓度多少合适？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.5928,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "设备故障处理手册-数控铣床.md#3",
+          "source": "设备故障处理手册-数控铣床.md#二、主轴过热",
+          "score": 0.5829,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#3",
+          "source": "热处理工艺卡-Cr12MoV.md#二、淬火工艺参数",
+          "score": 0.5795,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.5928,
+      "answer": "资料中没有找到相关内容，建议咨询相关部门负责人",
+      "answer_hash": "25461403ce78",
+      "fallback": true,
+      "reason": "model_not_answerable",
+      "layer": 2,
+      "raw_llm_output": "{\n  \"answerable\": false,\n  \"answer\": \"\",\n  \"cited\": []\n}",
+      "retrieve_s": 0.07,
+      "llm_s": 23.6,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "3%",
+        "5%"
+      ],
+      "expected_source": [
+        [
+          "设备点检规范.md#四、平面磨床日点检项目"
+        ]
+      ],
+      "retrieval_hit": false,
+      "retrieval_hit_all": false,
+      "expected_rank": [
+        8
+      ],
+      "missing_keywords": [],
+      "auto_correct": false,
+      "auto_outcome": "false_refusal",
+      "review": {
+        "verdict": "real_error",
+        "comment": "检索失败（磨床章节排第 8，没进 top3），模型拒答本身是对的，错在检索；与 3b 相同",
+        "answer_hash": "25461403ce78",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "V07",
+      "category": "confusable",
+      "split": "test",
+      "origin": "v1",
+      "question": "压铸模热处理后硬度要做到多少？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "热处理工艺卡-H13.md#4",
+          "source": "热处理工艺卡-H13.md#三、回火工艺参数",
+          "score": 0.6626,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "热处理工艺卡-P20.md#5",
+          "source": "热处理工艺卡-P20.md#四、检验要求",
+          "score": 0.6606,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#6",
+          "source": "热处理工艺卡-Cr12MoV.md#四、检验要求",
+          "score": 0.6565,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6626,
+      "answer": "压铸模热处理后硬度应达到 HRC 44～48。",
+      "answer_hash": "e7641eb92de6",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"压铸模热处理后硬度应达到 HRC 44～48。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.08,
+      "llm_s": 13.64,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "44~48"
+      ],
+      "expected_source": [
+        [
+          "热处理工艺卡-H13.md#三、回火工艺参数"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "V08",
+      "category": "table_tier",
+      "split": "test",
+      "origin": "v1",
+      "question": "请事假两天找谁批？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "员工考勤与请假制度.md#4",
+          "source": "员工考勤与请假制度.md#三、请假类型与审批",
+          "score": 0.7187,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "员工考勤与请假制度.md#5",
+          "source": "员工考勤与请假制度.md#四、请假流程",
+          "score": 0.6625,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "差旅与费用报销制度.md#2",
+          "source": "差旅与费用报销制度.md#一、出差审批",
+          "score": 0.6445,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.7187,
+      "answer": "两天的事假需要直属主管审批。",
+      "answer_hash": "05de1fca8998",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"两天的事假需要直属主管审批。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.06,
+      "llm_s": 16.08,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "部门经理"
+      ],
+      "expected_source": [
+        [
+          "员工考勤与请假制度.md#三、请假类型与审批"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [
+        "部门经理"
+      ],
+      "auto_correct": false,
+      "auto_outcome": "wrong_answer",
+      "review": {
+        "verdict": "real_error",
+        "comment": "表格分档错误：事假 2 天应为部门经理，答成直属主管。第一轮（4 份资料）时 7b 答对过，这次上下文多了'出差审批'片段后两次都答错",
+        "answer_hash": "05de1fca8998",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "B01",
+      "category": "paraphrase",
+      "split": "test",
+      "origin": "blind",
+      "question": "淬火炉突然报警了，现场该怎么办？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#5",
+          "source": "设备操作规程-真空高压气淬炉.md#四、报警与异常处理",
+          "score": 0.7413,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "安全生产管理制度.md#4",
+          "source": "安全生产管理制度.md#三、设备异常上报流程",
+          "score": 0.6602,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "新员工安全培训手册.md#5",
+          "source": "新员工安全培训手册.md#四、应急与疏散",
+          "score": 0.6266,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.7413,
+      "answer": "立即停止加热，保持真空状态，切换备用水源；停止加热，记录当时温度和工件炉号；停止升温，检查炉门密封和放气阀；关闭充气阀和水阀以外的所有阀门，保持炉门关闭，不得开门降温。除按表中处理外，还须按《安全生产管理制度》中的设备异常上报流程报告；涉及人员烫伤或氮气泄漏的，立即拨打厂内应急电话 8119。具体步骤如下：\n1. 操作工发现设备异常时，应立即按下急停按钮，在设备上挂'故障停用'牌，严禁自行拆修。\n2. 5 分钟内报告班组长；班组长确认后，15 分钟内通知设备员，并在设备管理系统中填报《设备故障报修单》。\n3. 设备员 30 分钟内到场判断：能当班修复的现场处理；需外委维修或停机超过 4 小时的，报设备动力部经理。\n4. 涉及人身伤害、火灾或有毒有害物质泄漏的，立即拨打厂内应急电话 8119，并同时报告安全环保部。\n5. 维修完成后，由操作工和设备员共同试机确认，摘牌后方可恢复生产。",
+      "answer_hash": "699445e43ac1",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"立即停止加热，保持真空状态，切换备用水源；停止加热，记录当时温度和工件炉号；停止升温，检查炉门密封和放气阀；关闭充气阀和水阀以外的所有阀门，保持炉门关闭，不得开门降温。除按表中处理外，还须按《安全生产管理制度》中的设备异常上报流程报告；涉及人员烫伤或氮气泄漏的，立即拨打厂内应急电话 8119。具体步骤如下：\\n1. 操作工发现设备异常时，应立即按下急停按钮，在设备上挂'故障停用'牌，严禁自行拆修。\\n2. 5 分钟内报告班组长；班组长确认后，15 分钟内通知设备员，并在设备管理系统中填报《设备故障报修单》。\\n3. 设备员 30 分钟内到场判断：能当班修复的现场处理；需外委维修或停机超过 4 小时的，报设备动力部经理。\\n4. 涉及人身伤害、火灾或有毒有害物质泄漏的，立即拨打厂内应急电话 8119，并同时报告安全环保部。\\n5. 维修完成后，由操作工和设备员共同试机确认，摘牌后方可恢复生产。\",\n  \"cited\": [1, 2]\n}",
+      "retrieve_s": 0.07,
+      "llm_s": 50.95,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        [
+          "停止加热",
+          "停止升温"
+        ],
+        "设备员"
+      ],
+      "expected_source": [
+        [
+          "设备操作规程-真空高压气淬炉.md#四、报警与异常处理"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": {
+        "verdict": "pass_note",
+        "comment": "包含真空炉特有处理（停止加热、保持真空、不得开门降温）和通用上报流程，事实都对；但把四种报警的处理措施连成一串，没有按报警类型分开，现场读起来容易混",
+        "answer_hash": "699445e43ac1",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20",
+        "stale": false
+      },
+      "final_correct": true
+    },
+    {
+      "id": "B04",
+      "category": "negative_near",
+      "split": "test",
+      "origin": "blind",
+      "question": "采购进厂的钢块要检验哪些项目？",
+      "answerable": false,
+      "top": [
+        {
+          "id": "质量检验标准-模块成品.md#5",
+          "source": "质量检验标准-模块成品.md#二、检验项目与标准值",
+          "score": 0.6583,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "质量检验标准-模块成品.md#3",
+          "source": "质量检验标准-模块成品.md#二、检验项目与标准值",
+          "score": 0.645,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "质量检验标准-模块成品.md#2",
+          "source": "质量检验标准-模块成品.md#一、总则",
+          "score": 0.6443,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6583,
+      "answer": "资料中没有找到相关内容，建议咨询相关部门负责人",
+      "answer_hash": "25461403ce78",
+      "fallback": true,
+      "reason": "model_not_answerable",
+      "layer": 2,
+      "raw_llm_output": "{\n  \"answerable\": false,\n  \"answer\": \"\",\n  \"cited\": []\n}",
+      "retrieve_s": 0.08,
+      "llm_s": 17.48,
+      "called_llm": true,
+      "top3_same_section_dup": true,
+      "auto_correct": true,
+      "auto_outcome": "correct_refusal",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "B05",
+      "category": "paraphrase",
+      "split": "test",
+      "origin": "blind",
+      "question": "用完的切削液废液怎么处理？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "危化品与仓储管理制度.md#5",
+          "source": "危化品与仓储管理制度.md#四、废液与危废处理",
+          "score": 0.7085,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "危化品与仓储管理制度.md#2",
+          "source": "危化品与仓储管理制度.md#一、适用范围",
+          "score": 0.5371,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "危化品与仓储管理制度.md#3",
+          "source": "危化品与仓储管理制度.md#二、危化品存放要求",
+          "score": 0.5238,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.7085,
+      "answer": "用完的切削液废液应先在车间的油水分离装置中分离浮油，分离出的废油和废液分别收集。然后倒入危废暂存间对应的专用收集桶，并在《危废出入库台账》上登记日期、品名、重量和交接人。最终由安全环保部统一委托有资质的危废处置单位转运处置。暂存时间不超过90天。",
+      "answer_hash": "d5b0cd163c44",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"用完的切削液废液应先在车间的油水分离装置中分离浮油，分离出的废油和废液分别收集。然后倒入危废暂存间对应的专用收集桶，并在《危废出入库台账》上登记日期、品名、重量和交接人。最终由安全环保部统一委托有资质的危废处置单位转运处置。暂存时间不超过90天。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.08,
+      "llm_s": 27.46,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        [
+          "危废暂存间",
+          "收集桶"
+        ],
+        "油水分离"
+      ],
+      "expected_source": [
+        [
+          "危化品与仓储管理制度.md#四、废液与危废处理"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "B07",
+      "category": "negative_near",
+      "split": "test",
+      "origin": "blind",
+      "question": "劳保鞋多久可以换一双新的？",
+      "answerable": false,
+      "top": [
+        {
+          "id": "安全生产管理制度.md#2",
+          "source": "安全生产管理制度.md#一、劳动防护用品",
+          "score": 0.5768,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "新员工安全培训手册.md#3",
+          "source": "新员工安全培训手册.md#二、师带徒与独立上岗",
+          "score": 0.5447,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "员工考勤与请假制度.md#4",
+          "source": "员工考勤与请假制度.md#三、请假类型与审批",
+          "score": 0.5289,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.5768,
+      "answer": "资料中没有找到相关内容，建议咨询相关部门负责人",
+      "answer_hash": "25461403ce78",
+      "fallback": true,
+      "reason": "model_not_answerable",
+      "layer": 2,
+      "raw_llm_output": "{\n  \"answerable\": false,\n  \"answer\": \"\",\n  \"cited\": []\n}",
+      "retrieve_s": 0.08,
+      "llm_s": 16.82,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "auto_correct": true,
+      "auto_outcome": "correct_refusal",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "B08",
+      "category": "negative_near",
+      "split": "test",
+      "origin": "blind",
+      "question": "上夜班有补贴吗？",
+      "answerable": false,
+      "top": [
+        {
+          "id": "差旅与费用报销制度.md#5",
+          "source": "差旅与费用报销制度.md#四、出差补助",
+          "score": 0.6008,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "员工考勤与请假制度.md#2",
+          "source": "员工考勤与请假制度.md#一、工作时间",
+          "score": 0.5501,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "差旅与费用报销制度.md#3",
+          "source": "差旅与费用报销制度.md#二、交通工具标准",
+          "score": 0.5136,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6008,
+      "answer": "资料中没有找到相关内容，建议咨询相关部门负责人",
+      "answer_hash": "25461403ce78",
+      "fallback": true,
+      "reason": "model_not_answerable",
+      "layer": 2,
+      "raw_llm_output": "{\n  \"answerable\": false,\n  \"answer\": \"\",\n  \"cited\": []\n}",
+      "retrieve_s": 0.06,
+      "llm_s": 14.31,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "auto_correct": true,
+      "auto_outcome": "correct_refusal",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "B09",
+      "category": "table_tier",
+      "split": "test",
+      "origin": "blind",
+      "question": "出差可以坐飞机吗？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "差旅与费用报销制度.md#3",
+          "source": "差旅与费用报销制度.md#二、交通工具标准",
+          "score": 0.6592,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "差旅与费用报销制度.md#2",
+          "source": "差旅与费用报销制度.md#一、出差审批",
+          "score": 0.6205,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "差旅与费用报销制度.md#5",
+          "source": "差旅与费用报销制度.md#四、出差补助",
+          "score": 0.583,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6592,
+      "answer": "一般员工出差可以乘坐飞机，但原则上不乘坐飞机。单程800公里以上或紧急情况经分管副总经理批准，可以乘坐经济舱。",
+      "answer_hash": "1d844188476c",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"一般员工出差可以乘坐飞机，但原则上不乘坐飞机。单程800公里以上或紧急情况经分管副总经理批准，可以乘坐经济舱。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.06,
+      "llm_s": 17.06,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "800",
+        "经济舱"
+      ],
+      "expected_source": [
+        [
+          "差旅与费用报销制度.md#二、交通工具标准"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "B10",
+      "category": "paraphrase",
+      "split": "test",
+      "origin": "blind",
+      "question": "报销单要在多长时间内交上去？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "差旅与费用报销制度.md#6",
+          "source": "差旅与费用报销制度.md#五、报销流程与时限",
+          "score": 0.7473,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "差旅与费用报销制度.md#2",
+          "source": "差旅与费用报销制度.md#一、出差审批",
+          "score": 0.6632,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "差旅与费用报销制度.md#7",
+          "source": "差旅与费用报销制度.md#六、借款",
+          "score": 0.6395,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.7473,
+      "answer": "出差结束后10个工作日内，在OA系统提交《差旅费报销单》，日常费用报销须在费用发生后30天内提交。",
+      "answer_hash": "114bb9477bff",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"出差结束后10个工作日内，在OA系统提交《差旅费报销单》，日常费用报销须在费用发生后30天内提交。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.07,
+      "llm_s": 18.03,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "10个工作日",
+        "30天"
+      ],
+      "expected_source": [
+        [
+          "差旅与费用报销制度.md#五、报销流程与时限"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "B12",
+      "category": "confusable",
+      "split": "test",
+      "origin": "blind",
+      "question": "热处理后硬度不合格的模块怎么处理？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "质量检验标准-模块成品.md#7",
+          "source": "质量检验标准-模块成品.md#四、不合格品处理",
+          "score": 0.6758,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "质量检验标准-模块成品.md#3",
+          "source": "质量检验标准-模块成品.md#二、检验项目与标准值",
+          "score": 0.6654,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "热处理工艺卡-H13.md#5",
+          "source": "热处理工艺卡-H13.md#四、检验要求",
+          "score": 0.6634,
+          "passed": true,
+          "cited": true
+        }
+      ],
+      "top1_score": 0.6758,
+      "answer": "硬度不合格的模块，可重新回火一次调整；淬火硬度不足的，须经技术质量部批准后方可返工重新淬火。",
+      "answer_hash": "c462c1769510",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"硬度不合格的模块，可重新回火一次调整；淬火硬度不足的，须经技术质量部批准后方可返工重新淬火。\",\n  \"cited\": [3]\n}",
+      "retrieve_s": 0.1,
+      "llm_s": 21.8,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "回火",
+        "技术质量部"
+      ],
+      "expected_source": [
+        [
+          "热处理工艺卡-H13.md#四、检验要求",
+          "热处理工艺卡-P20.md#四、检验要求",
+          "热处理工艺卡-Cr12MoV.md#四、检验要求"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        3
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": {
+        "verdict": "pass_note",
+        "comment": "只给 H13/Cr12MoV 的规则，没说明按钢种不同（与 3b 相同）",
+        "answer_hash": "c462c1769510",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20",
+        "stale": false
+      },
+      "final_correct": true
+    },
+    {
+      "id": "P03",
+      "category": "paraphrase",
+      "split": "test",
+      "origin": "new",
+      "question": "新人进厂多久以后才能自己单独开机床？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "新员工安全培训手册.md#3",
+          "source": "新员工安全培训手册.md#二、师带徒与独立上岗",
+          "score": 0.6939,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "新员工安全培训手册.md#4",
+          "source": "新员工安全培训手册.md#三、必须牢记的安全规定",
+          "score": 0.5543,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "安全生产管理制度.md#2",
+          "source": "安全生产管理制度.md#一、劳动防护用品",
+          "score": 0.549,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6939,
+      "answer": "新人进厂后3个月以后才能自己单独开机床。",
+      "answer_hash": "1b55cba16370",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"新人进厂后3个月以后才能自己单独开机床。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.08,
+      "llm_s": 17.75,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "3个月",
+        "考核"
+      ],
+      "expected_source": [
+        [
+          "新员工安全培训手册.md#二、师带徒与独立上岗"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [
+        "考核"
+      ],
+      "auto_correct": false,
+      "auto_outcome": "wrong_answer",
+      "review": {
+        "verdict": "real_error",
+        "comment": "不完整：只说'3 个月以后'，漏了'带教期满须通过实操考核、取得上岗证'这个前提，会被理解成满 3 个月就能自己开",
+        "answer_hash": "1b55cba16370",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "P04",
+      "category": "paraphrase",
+      "split": "dev",
+      "origin": "new",
+      "question": "着火了是油烧起来，能拿水浇吗？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "安全生产管理制度.md#3",
+          "source": "安全生产管理制度.md#二、动火作业审批",
+          "score": 0.5266,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "危化品与仓储管理制度.md#5",
+          "source": "危化品与仓储管理制度.md#四、废液与危废处理",
+          "score": 0.5185,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#5",
+          "source": "设备操作规程-真空高压气淬炉.md#四、报警与异常处理",
+          "score": 0.5045,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.5266,
+      "answer": "资料中没有找到相关内容，建议咨询相关部门负责人",
+      "answer_hash": "25461403ce78",
+      "fallback": true,
+      "reason": "model_not_answerable",
+      "layer": 2,
+      "raw_llm_output": "{\n  \"answerable\": false,\n  \"answer\": \"\",\n  \"cited\": []\n}",
+      "retrieve_s": 0.09,
+      "llm_s": 20.97,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        [
+          "严禁用水",
+          "不能用水",
+          "不能",
+          "不可以"
+        ],
+        [
+          "泡沫",
+          "干粉",
+          "沙土"
+        ]
+      ],
+      "expected_source": [
+        [
+          "新员工安全培训手册.md#四、应急与疏散"
+        ]
+      ],
+      "retrieval_hit": false,
+      "retrieval_hit_all": false,
+      "expected_rank": [
+        4
+      ],
+      "missing_keywords": [],
+      "auto_correct": false,
+      "auto_outcome": "false_refusal",
+      "review": {
+        "verdict": "real_error",
+        "comment": "检索失败（期望来源排第 4），7b 在没有相关片段的上下文下判答不了，模型行为符合'不用常识补充'，错在检索；对比：3b 同样上下文下用常识答'对'了",
+        "answer_hash": "25461403ce78",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "T01",
+      "category": "table_tier",
+      "split": "test",
+      "origin": "new",
+      "question": "病假请 5 天要谁批？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "员工考勤与请假制度.md#4",
+          "source": "员工考勤与请假制度.md#三、请假类型与审批",
+          "score": 0.7032,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "差旅与费用报销制度.md#2",
+          "source": "差旅与费用报销制度.md#一、出差审批",
+          "score": 0.6369,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "员工考勤与请假制度.md#5",
+          "source": "员工考勤与请假制度.md#四、请假流程",
+          "score": 0.6165,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.7032,
+      "answer": "病假请5天需要人力资源部审批。",
+      "answer_hash": "3914d3518fa4",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"病假请5天需要人力资源部审批。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.07,
+      "llm_s": 10.66,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "人力资源部"
+      ],
+      "expected_source": [
+        [
+          "员工考勤与请假制度.md#三、请假类型与审批"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "T02",
+      "category": "table_tier",
+      "split": "test",
+      "origin": "new",
+      "question": "在油库旁边 5 米的地方焊东西，属于几级动火，谁审批？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "安全生产管理制度.md#3",
+          "source": "安全生产管理制度.md#二、动火作业审批",
+          "score": 0.7154,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#5",
+          "source": "设备操作规程-真空高压气淬炉.md#四、报警与异常处理",
+          "score": 0.5404,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "安全生产管理制度.md#4",
+          "source": "安全生产管理制度.md#三、设备异常上报流程",
+          "score": 0.534,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.7154,
+      "answer": "在油库旁边 5 米的地方焊东西属于一级动火，由安全环保部经理审批，并报分管副总经理备案。",
+      "answer_hash": "e7df5669e5b4",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"在油库旁边 5 米的地方焊东西属于一级动火，由安全环保部经理审批，并报分管副总经理备案。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.1,
+      "llm_s": 19.79,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "一级",
+        "安全环保部经理"
+      ],
+      "expected_source": [
+        [
+          "安全生产管理制度.md#二、动火作业审批"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "T03",
+      "category": "table_tier",
+      "split": "test",
+      "origin": "new",
+      "question": "一批 30 件的模块出厂检验要抽几件？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "质量检验标准-模块成品.md#6",
+          "source": "质量检验标准-模块成品.md#三、抽检比例",
+          "score": 0.7461,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "质量检验标准-模块成品.md#2",
+          "source": "质量检验标准-模块成品.md#一、总则",
+          "score": 0.6722,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "质量检验标准-模块成品.md#3",
+          "source": "质量检验标准-模块成品.md#二、检验项目与标准值",
+          "score": 0.6509,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.7461,
+      "answer": "需要抽检 6 件。根据资料片段1，11～50 件的抽检数量为抽 20%，且不少于 5 件，30 件属于此范围，因此抽检数量为 30 * 20% = 6 件。",
+      "answer_hash": "5e56b86b6764",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"需要抽检 6 件。根据资料片段1，11～50 件的抽检数量为抽 20%，且不少于 5 件，30 件属于此范围，因此抽检数量为 30 * 20% = 6 件。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.09,
+      "llm_s": 23.29,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "6件"
+      ],
+      "expected_source": [
+        [
+          "质量检验标准-模块成品.md#三、抽检比例"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "T04",
+      "category": "table_tier",
+      "split": "dev",
+      "origin": "new",
+      "question": "一批 8 件的模块要怎么抽检？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "质量检验标准-模块成品.md#6",
+          "source": "质量检验标准-模块成品.md#三、抽检比例",
+          "score": 0.6978,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "质量检验标准-模块成品.md#7",
+          "source": "质量检验标准-模块成品.md#四、不合格品处理",
+          "score": 0.646,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "质量检验标准-模块成品.md#2",
+          "source": "质量检验标准-模块成品.md#一、总则",
+          "score": 0.6412,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6978,
+      "answer": "这批8件的模块需要全检，不合格件需单件处理。",
+      "answer_hash": "1f926a5467bf",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"这批8件的模块需要全检，不合格件需单件处理。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.09,
+      "llm_s": 11.18,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "全检"
+      ],
+      "expected_source": [
+        [
+          "质量检验标准-模块成品.md#三、抽检比例"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "T05",
+      "category": "table_tier",
+      "split": "test",
+      "origin": "new",
+      "question": "报销一笔 12000 元的费用需要哪些人审批？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "差旅与费用报销制度.md#2",
+          "source": "差旅与费用报销制度.md#一、出差审批",
+          "score": 0.6109,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "差旅与费用报销制度.md#6",
+          "source": "差旅与费用报销制度.md#五、报销流程与时限",
+          "score": 0.6074,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "差旅与费用报销制度.md#7",
+          "source": "差旅与费用报销制度.md#六、借款",
+          "score": 0.5802,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6109,
+      "answer": "报销一笔 12000 元的费用需要部门经理 + 分管副总经理审批。",
+      "answer_hash": "b22fd6cf6307",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"报销一笔 12000 元的费用需要部门经理 + 分管副总经理审批。\",\n  \"cited\": [1, 2]\n}",
+      "retrieve_s": 0.08,
+      "llm_s": 17.99,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "部门经理",
+        "分管副总经理"
+      ],
+      "expected_source": [
+        [
+          "差旅与费用报销制度.md#五、报销流程与时限"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        2
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "T06",
+      "category": "table_tier",
+      "split": "dev",
+      "origin": "new",
+      "question": "去上海出差，一天伙食补助多少钱？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "差旅与费用报销制度.md#5",
+          "source": "差旅与费用报销制度.md#四、出差补助",
+          "score": 0.7577,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "差旅与费用报销制度.md#2",
+          "source": "差旅与费用报销制度.md#一、出差审批",
+          "score": 0.5472,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "差旅与费用报销制度.md#6",
+          "source": "差旅与费用报销制度.md#五、报销流程与时限",
+          "score": 0.5467,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.7577,
+      "answer": "去上海出差，一天伙食补助为100元。",
+      "answer_hash": "f9903f4294dd",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"去上海出差，一天伙食补助为100元。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.08,
+      "llm_s": 18.41,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "100元"
+      ],
+      "expected_source": [
+        [
+          "差旅与费用报销制度.md#四、出差补助"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "T07",
+      "category": "table_tier",
+      "split": "test",
+      "origin": "new",
+      "question": "部门经理出差坐高铁可以坐什么座位？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "差旅与费用报销制度.md#3",
+          "source": "差旅与费用报销制度.md#二、交通工具标准",
+          "score": 0.6406,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "差旅与费用报销制度.md#5",
+          "source": "差旅与费用报销制度.md#四、出差补助",
+          "score": 0.5335,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "差旅与费用报销制度.md#2",
+          "source": "差旅与费用报销制度.md#一、出差审批",
+          "score": 0.5143,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6406,
+      "answer": "部门经理出差可以乘坐高铁一等座。",
+      "answer_hash": "bbd06e213fe7",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"部门经理出差可以乘坐高铁一等座。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.08,
+      "llm_s": 10.52,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "一等座"
+      ],
+      "expected_source": [
+        [
+          "差旅与费用报销制度.md#二、交通工具标准"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "T08",
+      "category": "table_tier",
+      "split": "test",
+      "origin": "new",
+      "question": "这个月第 5 次迟到要扣多少钱？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "员工考勤与请假制度.md#3",
+          "source": "员工考勤与请假制度.md#二、迟到、早退与旷工",
+          "score": 0.6928,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "差旅与费用报销制度.md#6",
+          "source": "差旅与费用报销制度.md#五、报销流程与时限",
+          "score": 0.6073,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "差旅与费用报销制度.md#7",
+          "source": "差旅与费用报销制度.md#六、借款",
+          "score": 0.5883,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6928,
+      "answer": "这个月第5次迟到要扣50元。",
+      "answer_hash": "0555477577f7",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"这个月第5次迟到要扣50元。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.08,
+      "llm_s": 19.56,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "50元"
+      ],
+      "expected_source": [
+        [
+          "员工考勤与请假制度.md#二、迟到、早退与旷工"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "C01",
+      "category": "cross_chunk",
+      "split": "test",
+      "origin": "new",
+      "question": "P20 模块的淬火温度和回火后的目标硬度分别是多少？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "热处理工艺卡-P20.md#4",
+          "source": "热处理工艺卡-P20.md#三、回火工艺参数",
+          "score": 0.6413,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "热处理工艺卡-P20.md#3",
+          "source": "热处理工艺卡-P20.md#二、淬火工艺参数",
+          "score": 0.6381,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "热处理工艺卡-P20.md#5",
+          "source": "热处理工艺卡-P20.md#四、检验要求",
+          "score": 0.6375,
+          "passed": true,
+          "cited": true
+        }
+      ],
+      "top1_score": 0.6413,
+      "answer": "P20 模块的淬火温度为 850～870℃。回火后的目标硬度为预硬态 HRC 30～36。",
+      "answer_hash": "1a2ba0ca5c61",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"P20 模块的淬火温度为 850～870℃。回火后的目标硬度为预硬态 HRC 30～36。\",\n  \"cited\": [1, 2, 3]\n}",
+      "retrieve_s": 0.11,
+      "llm_s": 23.77,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "850~870",
+        "30~36"
+      ],
+      "expected_source": [
+        [
+          "热处理工艺卡-P20.md#二、淬火工艺参数"
+        ],
+        [
+          "热处理工艺卡-P20.md#三、回火工艺参数"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        2,
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "C02",
+      "category": "cross_chunk",
+      "split": "test",
+      "origin": "new",
+      "question": "Cr12MoV 用方案 A 时淬火温度和回火温度各是多少？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#5",
+          "source": "热处理工艺卡-Cr12MoV.md#三、回火工艺参数",
+          "score": 0.6985,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#2",
+          "source": "热处理工艺卡-Cr12MoV.md#一、适用范围",
+          "score": 0.6911,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#4",
+          "source": "热处理工艺卡-Cr12MoV.md#二、淬火工艺参数",
+          "score": 0.6898,
+          "passed": true,
+          "cited": true
+        }
+      ],
+      "top1_score": 0.6985,
+      "answer": "Cr12MoV 用方案 A 时淬火温度为 1100～1120℃，回火温度为 180～200℃。",
+      "answer_hash": "bc1ff8354233",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"Cr12MoV 用方案 A 时淬火温度为 1100～1120℃，回火温度为 180～200℃。\",\n  \"cited\": [3]\n}",
+      "retrieve_s": 0.1,
+      "llm_s": 21.25,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "1020~1040",
+        "180~200"
+      ],
+      "expected_source": [
+        [
+          "热处理工艺卡-Cr12MoV.md#二、淬火工艺参数"
+        ],
+        [
+          "热处理工艺卡-Cr12MoV.md#三、回火工艺参数"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        3,
+        1
+      ],
+      "missing_keywords": [
+        "1020~1040"
+      ],
+      "auto_correct": false,
+      "auto_outcome": "wrong_answer",
+      "review": {
+        "verdict": "real_error",
+        "comment": "与 3b 相同：方案 A 所在的表格片段没进 top3，只看到方案 B 那一行，把 1100～1120℃ 当成方案 A",
+        "answer_hash": "bc1ff8354233",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "C03",
+      "category": "cross_chunk",
+      "split": "test",
+      "origin": "new",
+      "question": "数控铣床主轴温度超过 60℃，除了停机还要按什么流程上报？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "设备故障处理手册-数控铣床.md#3",
+          "source": "设备故障处理手册-数控铣床.md#二、主轴过热",
+          "score": 0.7678,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.7626,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "设备故障处理手册-数控铣床.md#4",
+          "source": "设备故障处理手册-数控铣床.md#二、主轴过热",
+          "score": 0.7522,
+          "passed": true,
+          "cited": true
+        }
+      ],
+      "top1_score": 0.7678,
+      "answer": "除了停机外，还需立即报设备员。由设备员用振动仪检测轴承状态，确认需要更换轴承的，按停机超过4小时的情形报设备动力部经理，安排外委维修。",
+      "answer_hash": "489736d05045",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"除了停机外，还需立即报设备员。由设备员用振动仪检测轴承状态，确认需要更换轴承的，按停机超过4小时的情形报设备动力部经理，安排外委维修。\",\n  \"cited\": [1, 3]\n}",
+      "retrieve_s": 0.11,
+      "llm_s": 27.16,
+      "called_llm": true,
+      "top3_same_section_dup": true,
+      "expected_keywords": [
+        "班组长",
+        "设备员"
+      ],
+      "expected_source": [
+        [
+          "设备点检规范.md#三、数控铣床日点检项目",
+          "设备故障处理手册-数控铣床.md#二、主轴过热"
+        ],
+        [
+          "安全生产管理制度.md#三、设备异常上报流程",
+          "新员工安全培训手册.md#三、必须牢记的安全规定"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": false,
+      "expected_rank": [
+        1,
+        7
+      ],
+      "missing_keywords": [
+        "班组长"
+      ],
+      "auto_correct": false,
+      "auto_outcome": "wrong_answer",
+      "review": {
+        "verdict": "real_error",
+        "comment": "与 3b 相同：漏了'5 分钟内报班组长'，异常上报流程章节没进 top3",
+        "answer_hash": "489736d05045",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "C07",
+      "category": "cross_chunk",
+      "split": "dev",
+      "origin": "new",
+      "question": "真空气淬炉的氮气储罐压力要求多少，H13 气淬的气压是多少？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#6",
+          "source": "设备操作规程-真空高压气淬炉.md#五、安全注意事项",
+          "score": 0.6707,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#2",
+          "source": "设备操作规程-真空高压气淬炉.md#一、适用范围与人员要求",
+          "score": 0.6649,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "热处理工艺卡-H13.md#3",
+          "source": "热处理工艺卡-H13.md#二、淬火工艺参数",
+          "score": 0.6205,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6707,
+      "answer": "资料中没有找到相关内容，建议咨询相关部门负责人",
+      "answer_hash": "25461403ce78",
+      "fallback": true,
+      "reason": "model_not_answerable",
+      "layer": 2,
+      "raw_llm_output": "{\n  \"answerable\": false,\n  \"answer\": \"\",\n  \"cited\": []\n}",
+      "retrieve_s": 0.12,
+      "llm_s": 16.72,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "1.2",
+        "6~10"
+      ],
+      "expected_source": [
+        [
+          "设备操作规程-真空高压气淬炉.md#二、开炉前点检项目"
+        ],
+        [
+          "热处理工艺卡-H13.md#二、淬火工艺参数"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": false,
+      "expected_rank": [
+        4,
+        3
+      ],
+      "missing_keywords": [],
+      "auto_correct": false,
+      "auto_outcome": "false_refusal",
+      "review": {
+        "verdict": "real_error",
+        "comment": "与 3b 相同：真空炉点检章节排第 4 没进 top3，判答不了",
+        "answer_hash": "25461403ce78",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "F01",
+      "category": "confusable",
+      "split": "test",
+      "origin": "new",
+      "question": "P20 淬火加热温度是多少？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "热处理工艺卡-P20.md#3",
+          "source": "热处理工艺卡-P20.md#二、淬火工艺参数",
+          "score": 0.7138,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#4",
+          "source": "热处理工艺卡-Cr12MoV.md#二、淬火工艺参数",
+          "score": 0.6492,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "热处理工艺卡-P20.md#4",
+          "source": "热处理工艺卡-P20.md#三、回火工艺参数",
+          "score": 0.6381,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.7138,
+      "answer": "P20 淬火加热温度为 850～870℃。",
+      "answer_hash": "1e8e813ae158",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"P20 淬火加热温度为 850～870℃。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.07,
+      "llm_s": 21.43,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "850~870"
+      ],
+      "expected_source": [
+        [
+          "热处理工艺卡-P20.md#二、淬火工艺参数"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "F02",
+      "category": "confusable",
+      "split": "test",
+      "origin": "new",
+      "question": "Cr12MoV 方案 B 淬火温度是多少？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#4",
+          "source": "热处理工艺卡-Cr12MoV.md#二、淬火工艺参数",
+          "score": 0.702,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#2",
+          "source": "热处理工艺卡-Cr12MoV.md#一、适用范围",
+          "score": 0.6786,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#3",
+          "source": "热处理工艺卡-Cr12MoV.md#二、淬火工艺参数",
+          "score": 0.6777,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.702,
+      "answer": "Cr12MoV 方案 B 淬火温度为 1100～1120℃。",
+      "answer_hash": "3de70a671108",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"Cr12MoV 方案 B 淬火温度为 1100～1120℃。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.09,
+      "llm_s": 20.15,
+      "called_llm": true,
+      "top3_same_section_dup": true,
+      "expected_keywords": [
+        "1100~1120"
+      ],
+      "expected_source": [
+        [
+          "热处理工艺卡-Cr12MoV.md#二、淬火工艺参数"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "F03",
+      "category": "confusable",
+      "split": "test",
+      "origin": "new",
+      "question": "Cr12MoV 淬火后多长时间内必须回火？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#5",
+          "source": "热处理工艺卡-Cr12MoV.md#三、回火工艺参数",
+          "score": 0.6809,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#4",
+          "source": "热处理工艺卡-Cr12MoV.md#二、淬火工艺参数",
+          "score": 0.6427,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#3",
+          "source": "热处理工艺卡-Cr12MoV.md#二、淬火工艺参数",
+          "score": 0.6395,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6809,
+      "answer": "淬火后必须在1小时内进行第一次回火，防止开裂。",
+      "answer_hash": "0d462eddbb81",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"淬火后必须在1小时内进行第一次回火，防止开裂。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.09,
+      "llm_s": 20.8,
+      "called_llm": true,
+      "top3_same_section_dup": true,
+      "expected_keywords": [
+        "1小时"
+      ],
+      "expected_source": [
+        [
+          "热处理工艺卡-Cr12MoV.md#三、回火工艺参数"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "F04",
+      "category": "confusable",
+      "split": "dev",
+      "origin": "new",
+      "question": "P20 出油后多久内必须回火？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "热处理工艺卡-P20.md#4",
+          "source": "热处理工艺卡-P20.md#三、回火工艺参数",
+          "score": 0.6406,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#5",
+          "source": "热处理工艺卡-Cr12MoV.md#三、回火工艺参数",
+          "score": 0.555,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "热处理工艺卡-H13.md#4",
+          "source": "热处理工艺卡-H13.md#三、回火工艺参数",
+          "score": 0.5512,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6406,
+      "answer": "出油后必须在 4 小时内进行回火。",
+      "answer_hash": "4c6d9dce0ef9",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"出油后必须在 4 小时内进行回火。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.07,
+      "llm_s": 17.22,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "4小时"
+      ],
+      "expected_source": [
+        [
+          "热处理工艺卡-P20.md#三、回火工艺参数"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "F05",
+      "category": "confusable",
+      "split": "test",
+      "origin": "new",
+      "question": "Cr12MoV 热处理后平面度要求是多少？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#2",
+          "source": "热处理工艺卡-Cr12MoV.md#一、适用范围",
+          "score": 0.6727,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#6",
+          "source": "热处理工艺卡-Cr12MoV.md#四、检验要求",
+          "score": 0.6414,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#5",
+          "source": "热处理工艺卡-Cr12MoV.md#三、回火工艺参数",
+          "score": 0.5903,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6727,
+      "answer": "平面度不超过 0.10 mm/300 mm。",
+      "answer_hash": "69170bd4c6de",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"平面度不超过 0.10 mm/300 mm。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.08,
+      "llm_s": 19.12,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "0.10"
+      ],
+      "expected_source": [
+        [
+          "热处理工艺卡-Cr12MoV.md#四、检验要求"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        2
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "F06",
+      "category": "confusable",
+      "split": "test",
+      "origin": "new",
+      "question": "P20 硬度检验每炉要测几个点？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "热处理工艺卡-P20.md#5",
+          "source": "热处理工艺卡-P20.md#四、检验要求",
+          "score": 0.7048,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "热处理工艺卡-H13.md#5",
+          "source": "热处理工艺卡-H13.md#四、检验要求",
+          "score": 0.6202,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "质量检验标准-模块成品.md#3",
+          "source": "质量检验标准-模块成品.md#二、检验项目与标准值",
+          "score": 0.6174,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.7048,
+      "answer": "每炉在模块表面测 5 点。",
+      "answer_hash": "f8fce1150bcb",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"每炉在模块表面测 5 点。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.08,
+      "llm_s": 20.84,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        [
+          "5点",
+          "5个点",
+          "五点",
+          "五个点"
+        ]
+      ],
+      "expected_source": [
+        [
+          "热处理工艺卡-P20.md#四、检验要求"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "F07",
+      "category": "confusable",
+      "split": "test",
+      "origin": "new",
+      "question": "平面磨床液压油用什么油？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "设备点检规范.md#5",
+          "source": "设备点检规范.md#四、平面磨床日点检项目",
+          "score": 0.5939,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.5119,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "设备点检规范.md#2",
+          "source": "设备点检规范.md#一、目的与适用范围",
+          "score": 0.5106,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.5939,
+      "answer": "平面磨床使用的液压油是46#抗磨液压油。",
+      "answer_hash": "a778c0365973",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"平面磨床使用的液压油是46#抗磨液压油。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.08,
+      "llm_s": 21.78,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        [
+          "46#",
+          "46号"
+        ]
+      ],
+      "expected_source": [
+        [
+          "设备点检规范.md#四、平面磨床日点检项目"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "F08",
+      "category": "confusable",
+      "split": "test",
+      "origin": "new",
+      "question": "数控铣床导轨润滑加什么油？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.6017,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "设备故障处理手册-数控铣床.md#8",
+          "source": "设备故障处理手册-数控铣床.md#五、常见报警代码",
+          "score": 0.5832,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "设备故障处理手册-数控铣床.md#3",
+          "source": "设备故障处理手册-数控铣床.md#二、主轴过热",
+          "score": 0.5617,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6017,
+      "answer": "加注 68# 导轨油",
+      "answer_hash": "687a8216de4a",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"加注 68# 导轨油\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.1,
+      "llm_s": 19.29,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        [
+          "68#",
+          "68号"
+        ]
+      ],
+      "expected_source": [
+        [
+          "设备点检规范.md#三、数控铣床日点检项目",
+          "设备故障处理手册-数控铣床.md#二、主轴过热",
+          "设备故障处理手册-数控铣床.md#五、常见报警代码"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "F09",
+      "category": "confusable",
+      "split": "dev",
+      "origin": "new",
+      "question": "真空气淬炉的冷却水温度不能超过多少？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#2",
+          "source": "设备操作规程-真空高压气淬炉.md#一、适用范围与人员要求",
+          "score": 0.6497,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#3",
+          "source": "设备操作规程-真空高压气淬炉.md#二、开炉前点检项目",
+          "score": 0.643,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "热处理工艺卡-Cr12MoV.md#4",
+          "source": "热处理工艺卡-Cr12MoV.md#二、淬火工艺参数",
+          "score": 0.64,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6497,
+      "answer": "真空气淬炉的冷却水温度不能超过 35℃。",
+      "answer_hash": "bbe43d0e8f27",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"真空气淬炉的冷却水温度不能超过 35℃。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.11,
+      "llm_s": 24.17,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "35"
+      ],
+      "expected_source": [
+        [
+          "设备操作规程-真空高压气淬炉.md#二、开炉前点检项目"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        2
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "F10",
+      "category": "confusable",
+      "split": "test",
+      "origin": "new",
+      "question": "H13 模块退火态交货硬度要求是多少？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "热处理工艺卡-H13.md#5",
+          "source": "热处理工艺卡-H13.md#四、检验要求",
+          "score": 0.6331,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "质量检验标准-模块成品.md#3",
+          "source": "质量检验标准-模块成品.md#二、检验项目与标准值",
+          "score": 0.6303,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "热处理工艺卡-H13.md#4",
+          "source": "热处理工艺卡-H13.md#三、回火工艺参数",
+          "score": 0.5936,
+          "passed": true,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6331,
+      "answer": "H13 模块退火态交货硬度要求为 ≤ 229 HBW。",
+      "answer_hash": "dc85e66c0e5b",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"H13 模块退火态交货硬度要求为 ≤ 229 HBW。\",\n  \"cited\": [2]\n}",
+      "retrieve_s": 0.1,
+      "llm_s": 27.93,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "229"
+      ],
+      "expected_source": [
+        [
+          "质量检验标准-模块成品.md#二、检验项目与标准值"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        2
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "N04",
+      "category": "negative_near",
+      "split": "test",
+      "origin": "new",
+      "question": "工龄 15 年的员工年休假有几天？",
+      "answerable": false,
+      "top": [
+        {
+          "id": "员工考勤与请假制度.md#4",
+          "source": "员工考勤与请假制度.md#三、请假类型与审批",
+          "score": 0.6293,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "员工考勤与请假制度.md#2",
+          "source": "员工考勤与请假制度.md#一、工作时间",
+          "score": 0.5792,
+          "passed": true,
+          "cited": true
+        },
+        {
+          "id": "员工考勤与请假制度.md#3",
+          "source": "员工考勤与请假制度.md#二、迟到、早退与旷工",
+          "score": 0.5277,
+          "passed": true,
+          "cited": true
+        }
+      ],
+      "top1_score": 0.6293,
+      "answer": "工龄15年的员工年休假为10天。",
+      "answer_hash": "95bab5573c5c",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"工龄15年的员工年休假为10天。\",\n  \"cited\": []\n}",
+      "retrieve_s": 0.1,
+      "llm_s": 16.39,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "auto_correct": false,
+      "auto_outcome": "hallucination",
+      "review": {
+        "verdict": "real_error",
+        "comment": "幻觉：资料只写'满 1 年不满 10 年 5 天'，7b 编出'工龄 15 年 10 天'（3b 编的是 15 天）",
+        "answer_hash": "95bab5573c5c",
+        "first_seen_in": "eval_v2_7b.json",
+        "date": "2026-10-20",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "N11",
+      "category": "negative_near",
+      "split": "dev",
+      "origin": "new",
+      "question": "动火作业的监护人需要什么资质？",
+      "answerable": false,
+      "top": [
+        {
+          "id": "安全生产管理制度.md#3",
+          "source": "安全生产管理制度.md#二、动火作业审批",
+          "score": 0.6625,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "新员工安全培训手册.md#3",
+          "source": "新员工安全培训手册.md#二、师带徒与独立上岗",
+          "score": 0.5075,
+          "passed": true,
+          "cited": false
+        },
+        {
+          "id": "新员工安全培训手册.md#2",
+          "source": "新员工安全培训手册.md#一、三级安全教育",
+          "score": 0.4948,
+          "passed": false,
+          "cited": false
+        }
+      ],
+      "top1_score": 0.6625,
+      "answer": "资料中没有找到相关内容，建议咨询相关部门负责人",
+      "answer_hash": "25461403ce78",
+      "fallback": true,
+      "reason": "model_not_answerable",
+      "layer": 2,
+      "raw_llm_output": "{\n  \"answerable\": false,\n  \"answer\": \"\",\n  \"cited\": []\n}",
+      "retrieve_s": 0.09,
+      "llm_s": 8.2,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "auto_correct": true,
+      "auto_outcome": "correct_refusal",
+      "review": null,
+      "final_correct": true
+    }
+  ]
+}
