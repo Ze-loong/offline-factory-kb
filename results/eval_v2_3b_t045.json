@@ -1,4 +1,11 @@
 {
+  "name": "eval_v2",
+  "use_images": null,
+  "link": null,
+  "link_max": 2,
+  "review_files": [
+    "tests/review_v2_3b.json"
+  ],
   "model": "qwen2.5:3b",
   "threshold": 0.45,
   "top_k": 3,
@@ -143,7 +150,9 @@
           "p90": 9.32,
           "n": 76
         },
-        "top3_same_section_dup": 12
+        "top3_same_section_dup": 12,
+        "image_in_context": 0,
+        "with_linked": 0
       }
     },
     "test": {
@@ -284,7 +293,9 @@
           "p90": 9.3,
           "n": 63
         },
-        "top3_same_section_dup": 11
+        "top3_same_section_dup": 11,
+        "image_in_context": 0,
+        "with_linked": 0
       }
     }
   },
@@ -850,14 +861,7 @@
       "missing_keywords": [],
       "auto_correct": true,
       "auto_outcome": "correct",
-      "review": {
-        "verdict": "real_error",
-        "comment": "阈值造成的误拒：top1 0.547 < 0.55，第 1 层直接拦下，没有调用模型",
-        "answer_hash": "25461403ce78",
-        "first_seen_in": "eval_v2_3b_t055.json",
-        "date": "2026-10-20",
-        "stale": true
-      },
+      "review": null,
       "final_correct": true
     },
     {
@@ -1294,14 +1298,7 @@
       "missing_keywords": [],
       "auto_correct": true,
       "auto_outcome": "correct",
-      "review": {
-        "verdict": "real_error",
-        "comment": "阈值造成的误拒：top1 0.528 < 0.55，第 1 层直接拦下",
-        "answer_hash": "25461403ce78",
-        "first_seen_in": "eval_v2_3b_t055.json",
-        "date": "2026-10-20",
-        "stale": true
-      },
+      "review": null,
       "final_correct": true
     },
     {
@@ -1418,14 +1415,7 @@
       "missing_keywords": [],
       "auto_correct": true,
       "auto_outcome": "correct",
-      "review": {
-        "verdict": "real_error",
-        "comment": "不完整：只说油水分离、分别收集，漏了危废暂存间收集桶等",
-        "answer_hash": "c11588770d2f",
-        "first_seen_in": "eval_v2_3b_t055.json",
-        "date": "2026-10-20",
-        "stale": true
-      },
+      "review": null,
       "final_correct": true
     },
     {
@@ -1517,13 +1507,7 @@
       "top3_same_section_dup": false,
       "auto_correct": true,
       "auto_outcome": "correct_refusal",
-      "review": {
-        "verdict": "real_error",
-        "comment": "幻觉：'劳保鞋需要由经过培训的人员进行更换，具体由班组长负责'——把磨床'更换砂轮须由经过培训的人员进行'张冠李戴到劳保鞋",
-        "answer_hash": "671a579fa5c4",
-        "date": "2026-10-20",
-        "stale": true
-      },
+      "review": null,
       "final_correct": true
     },
     {
@@ -2730,14 +2714,7 @@
       "missing_keywords": [],
       "auto_correct": true,
       "auto_outcome": "correct",
-      "review": {
-        "verdict": "real_error",
-        "comment": "分档错误：油库旁 5 米属于一级动火（安全环保部经理审批），答成二级动火、车间主任。0.55 下上下文只剩 1 个片段（基线 3 个），基线答对；是否由阈值造成无法与随机波动区分",
-        "answer_hash": "d143157f35df",
-        "first_seen_in": "eval_v2_3b_t055.json",
-        "date": "2026-10-20",
-        "stale": true
-      },
+      "review": null,
       "final_correct": true
     },
     {
@@ -2797,13 +2774,7 @@
       "missing_keywords": [],
       "auto_correct": true,
       "auto_outcome": "correct",
-      "review": {
-        "verdict": "real_error",
-        "comment": "分档 + 计算错误：30 件属 11～50 件档，抽 20% = 6 件，答成 3 件",
-        "answer_hash": "e8956011a156",
-        "date": "2026-10-20",
-        "stale": true
-      },
+      "review": null,
       "final_correct": true
     },
     {

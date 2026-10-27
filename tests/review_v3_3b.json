@@ -1,0 +1,119 @@
+{
+  "reviewer_note": "逐条复核；回答与第二轮完全相同的题沿用 review_v2",
+  "reviews": {
+    "V08": [
+      {
+        "answer_hash": "b04d28be250f",
+        "verdict": "real_error",
+        "comment": "同基线：事假 2 天应为部门经理，答成直属主管",
+        "run": "eval_v3_3b.json"
+      }
+    ],
+    "V11": [
+      {
+        "answer_hash": "95ec22434ec7",
+        "verdict": "acceptable",
+        "comment": "如实转述\"按另行发布的《差旅住宿标准》执行，本制度不作规定\"，没有编造",
+        "run": "eval_v3_3b.json"
+      },
+      {
+        "answer_hash": "95ec22434ec7",
+        "verdict": "acceptable",
+        "comment": "如实转述\"按另行发布的《差旅住宿标准》执行，本制度不作规定\"，没有编造",
+        "run": "eval_v3_3b_run2.json"
+      }
+    ],
+    "B04": [
+      {
+        "answer_hash": "567b6e713dcc",
+        "verdict": "real_error",
+        "comment": "同基线：出厂检验冒充进厂检验",
+        "run": "eval_v3_3b.json"
+      },
+      {
+        "answer_hash": "2e77434cc894",
+        "verdict": "real_error",
+        "comment": "同基线：出厂检验冒充进厂检验",
+        "run": "eval_v3_3b_run2.json"
+      }
+    ],
+    "B08": [
+      {
+        "answer_hash": "552bed52df29",
+        "verdict": "real_error",
+        "comment": "幻觉：从两班制推出\"夜班有排班补贴\"（第二轮是如实说没提到，这次编了）",
+        "run": "eval_v3_3b.json"
+      },
+      {
+        "answer_hash": "2a0d76482ba1",
+        "verdict": "real_error",
+        "comment": "幻觉：从两班制推出\"夜班有排班补贴\"（第二轮是如实说没提到，这次编了）",
+        "run": "eval_v3_3b_run2.json"
+      }
+    ],
+    "T01": [
+      {
+        "answer_hash": "84abd1775f06",
+        "verdict": "real_error",
+        "comment": "同基线：病假 5 天应为人力资源部，答成部门经理",
+        "run": "eval_v3_3b.json"
+      },
+      {
+        "answer_hash": "65ed6c8fa474",
+        "verdict": "real_error",
+        "comment": "同基线：病假 5 天应为人力资源部，答成部门经理",
+        "run": "eval_v3_3b_run2.json"
+      }
+    ],
+    "T04": [
+      {
+        "answer_hash": "5759606e395d",
+        "verdict": "real_error",
+        "comment": "新错误：8 件应全检，答成按 20% 抽 2 件（第二轮两次都答对）；上下文无图片，属提示词变动后的随机变化",
+        "run": "eval_v3_3b.json"
+      },
+      {
+        "answer_hash": "7434d2ddd87f",
+        "verdict": "real_error",
+        "comment": "新错误：8 件应全检，答成按 20% 抽 2 件（第二轮两次都答对）；上下文无图片，属提示词变动后的随机变化",
+        "run": "eval_v3_3b_run2.json"
+      }
+    ],
+    "C03": [
+      {
+        "answer_hash": "4c1c9eb60c51",
+        "verdict": "real_error",
+        "comment": "同基线：漏了报班组长，异常上报流程章节没进上下文",
+        "run": "eval_v3_3b.json"
+      },
+      {
+        "answer_hash": "75439831997b",
+        "verdict": "real_error",
+        "comment": "同基线：漏了报班组长，异常上报流程章节没进上下文",
+        "run": "eval_v3_3b_run2.json"
+      }
+    ],
+    "N11": [
+      {
+        "answer_hash": "0b18ec6e3b1e",
+        "verdict": "real_error",
+        "comment": "幻觉：把新员工上岗证说成监护人资质",
+        "run": "eval_v3_3b.json"
+      },
+      {
+        "answer_hash": "592e777010a5",
+        "verdict": "real_error",
+        "comment": "幻觉：把新员工上岗证说成监护人资质",
+        "run": "eval_v3_3b_run2.json"
+      }
+    ],
+    "V04": [
+      {
+        "answer_hash": "70659d612676",
+        "verdict": "real_error",
+        "comment": "漏了\"报告班组长\"（run2；run1 答对）",
+        "run": "eval_v3_3b_run2.json"
+      }
+    ]
+  }
+}

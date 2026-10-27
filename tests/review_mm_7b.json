@@ -1,0 +1,131 @@
+{
+  "reviewer_note": "逐条复核：对照真值表、图片描述和资料原文。纯图片题 7 题、无答案题 6 题两次都自动判对，逐条看过回答与真值一致，未单独记录",
+  "reviews": {
+    "MB01": [
+      {
+        "answer_hash": "148aff1e2c49",
+        "verdict": "scoring_error",
+        "comment": "结论（异常）和处理（立即停机、报设备员）都对，关键词缺的是 60；但把 55℃ 当成停机依据（规范是超过 60℃ 立即停机），环境温度那句算式表述混乱，还把识别错的\"王组长\"\"李羽\"搬进了回答",
+        "run": "eval_mm_images_link_7b.json"
+      },
+      {
+        "answer_hash": "f200f347be73",
+        "verdict": "scoring_error",
+        "comment": "结论（异常）和处理（立即停机、报设备员）都对，关键词缺的是 60；但把 55℃ 当成停机依据（规范是超过 60℃ 立即停机），环境温度那句算式表述混乱，还把识别错的\"王组长\"\"李羽\"搬进了回答",
+        "run": "eval_mm_images_link_7b_run2.json"
+      }
+    ],
+    "MB02": [
+      {
+        "answer_hash": "063526d4119e",
+        "verdict": "pass_note",
+        "comment": "复核确认：指出 0.45 MPa 低于 0.5～0.7 MPa、表上判正常不对，不能启动换刀，前后一致（3b 同配置是前后矛盾的假通过）",
+        "run": "eval_mm_images_link_7b.json"
+      },
+      {
+        "answer_hash": "df69266e7551",
+        "verdict": "pass_note",
+        "comment": "复核确认：指出 0.45 MPa 低于 0.5～0.7 MPa、表上判正常不对，不能启动换刀，前后一致（3b 同配置是前后矛盾的假通过）",
+        "run": "eval_mm_images_link_7b_run2.json"
+      }
+    ],
+    "MB03": [
+      {
+        "answer_hash": "71de56833cad",
+        "verdict": "false_pass",
+        "comment": "写出了\"36 + 15 = 51\"，却得出\"53 不高于 51，符合规范\"——数值比较错，结论错；关键词\"高于\"来自\"不高于\"。7b 和 3b 错在同一处",
+        "run": "eval_mm_images_link_7b.json"
+      },
+      {
+        "answer_hash": "71de56833cad",
+        "verdict": "false_pass",
+        "comment": "写出了\"36 + 15 = 51\"，却得出\"53 不高于 51，符合规范\"——数值比较错，结论错；关键词\"高于\"来自\"不高于\"。7b 和 3b 错在同一处",
+        "run": "eval_mm_images_link_7b_run2.json"
+      }
+    ],
+    "MB04": [
+      {
+        "answer_hash": "0e140e6ae140",
+        "verdict": "real_error",
+        "comment": "故障手册\"三、主轴异响与振动\"没进上下文；尖叫声、润滑不足对，没答出轴承早期磨损，\"主轴冷却系统故障\"资料里没有",
+        "run": "eval_mm_images_link_7b.json"
+      },
+      {
+        "answer_hash": "c35106210dd2",
+        "verdict": "real_error",
+        "comment": "故障手册\"三、主轴异响与振动\"没进上下文；尖叫声、润滑不足对，没答出轴承早期磨损，\"主轴冷却系统故障\"资料里没有",
+        "run": "eval_mm_images_link_7b_run2.json"
+      }
+    ],
+    "MB05": [
+      {
+        "answer_hash": "2dd19081850b",
+        "verdict": "acceptable",
+        "comment": "\"液压油位偏低，补加 46# 抗磨液压油\"——问题和处理都对，只是没说出\"约 1/2\"（与 3b 同类回答口径一致）",
+        "run": "eval_mm_images_link_7b.json"
+      },
+      {
+        "answer_hash": "467cc9cbabf7",
+        "verdict": "acceptable",
+        "comment": "\"液压油位偏低，补加 46# 抗磨液压油\"——问题和处理都对，只是没说出\"约 1/2\"（与 3b 同类回答口径一致）",
+        "run": "eval_mm_images_link_7b_run2.json"
+      }
+    ],
+    "MB06": [
+      {
+        "answer_hash": "650802ffec0c",
+        "verdict": "real_error",
+        "comment": "2.5% 和 3%～5% 都在回答里，却得出\"合格\"——数值比较出错，7b 和 3b 错在同一处",
+        "run": "eval_mm_images_link_7b.json"
+      },
+      {
+        "answer_hash": "650802ffec0c",
+        "verdict": "real_error",
+        "comment": "2.5% 和 3%～5% 都在回答里，却得出\"合格\"——数值比较出错，7b 和 3b 错在同一处",
+        "run": "eval_mm_images_link_7b_run2.json"
+      }
+    ],
+    "MB07": [
+      {
+        "answer_hash": "67d54b1336cc",
+        "verdict": "pass_note",
+        "comment": "复核确认：1.1 MPa 低于 1.2 MPa，不得进行气淬，理由引用规程第二节",
+        "run": "eval_mm_images_link_7b.json"
+      },
+      {
+        "answer_hash": "fdd906af2c98",
+        "verdict": "pass_note",
+        "comment": "复核确认：1.1 MPa 低于 1.2 MPa，不得进行气淬，理由引用规程第二节",
+        "run": "eval_mm_images_link_7b_run2.json"
+      }
+    ],
+    "MB08": [
+      {
+        "answer_hash": "25461403ce78",
+        "verdict": "real_error",
+        "comment": "第 2 层误拒：故障手册\"二、主轴过热\"没补进来（关联补进的是点检规范第三节和故障手册第一节），7b 判资料不足；3b 同配置是编出\"可以继续加工\"",
+        "run": "eval_mm_images_link_7b.json"
+      },
+      {
+        "answer_hash": "25461403ce78",
+        "verdict": "real_error",
+        "comment": "第 2 层误拒：故障手册\"二、主轴过热\"没补进来（关联补进的是点检规范第三节和故障手册第一节），7b 判资料不足；3b 同配置是编出\"可以继续加工\"",
+        "run": "eval_mm_images_link_7b_run2.json"
+      }
+    ],
+    "MB09": [
+      {
+        "answer_hash": "d1c95cb39ca4",
+        "verdict": "pass_note",
+        "comment": "复核确认：2 号＝炉门密封圈，有压痕更换后方可开炉，引用规程第二节",
+        "run": "eval_mm_images_link_7b.json"
+      },
+      {
+        "answer_hash": "8d4b5a34a469",
+        "verdict": "pass_note",
+        "comment": "复核确认：2 号＝炉门密封圈，有压痕更换后方可开炉，引用规程第二节",
+        "run": "eval_mm_images_link_7b_run2.json"
+      }
+    ]
+  }
+}

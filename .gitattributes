@@ -1,4 +1,5 @@
 # 测试集按原始字节保存：它的 SHA256 记录在 开发与评估记录.md，换行符被转换会导致哈希对不上
 tests/questions.json -text
+tests/questions_mm.json -text
 # Windows 批处理统一用 CRLF
 *.bat text eol=crlf

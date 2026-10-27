@@ -25,6 +25,8 @@ from chromadb.config import Settings  # noqa: E402
 # ==================== 配置区（所有可调参数集中在这一块） ====================
 BASE_DIR = Path(__file__).resolve().parent
 DOCS_DIR = BASE_DIR / "docs"             # 原始资料目录
+IMAGES_DIR = DOCS_DIR / "images"         # 图片资料目录（设备结构图、点检表照片）
+IMAGE_DESC_DIR = IMAGES_DIR / "_desc"   # 视觉模型识别结果（每张图一个 JSON，入库时读取，不重复跑模型）
 DB_DIR = BASE_DIR / "chroma_db"          # Chroma 本地持久化目录
 RESULTS_DIR = BASE_DIR / "results"       # 测试结果输出目录
 COLLECTION = "factory_kb"                # 向量库集合名
@@ -33,6 +35,7 @@ OLLAMA_HOST = "http://127.0.0.1:11434"   # 本机 Ollama 服务地址
 LLM_MODEL = "qwen2.5:3b"                 # 演示默认 3b；换成 "qwen2.5:7b" 回答更准但 CPU 上首字约慢 2.5 倍
 AVAILABLE_MODELS = ["qwen2.5:3b", "qwen2.5:7b"]   # 界面下拉框可选的模型
 EMBED_MODEL = "bge-m3"                # 向量模型（1024 维），和 Qwen 共用同一个 Ollama 服务
+VISION_MODEL = "qwen3-vl:4b-instruct"   # 图片识别用的视觉模型（只在入库前跑一次）；qwen3-vl 默认标签是思考版，关不掉思考，必须用 -instruct
 
 CHUNK_SIZE = 350                         # 每个片段正文最多多少字符（按章节/段落/表格切，不硬切句子；不含前面拼的"文件标题 > 章节"，入库后片段实际最长约 390 字）
 CHUNK_OVERLAP = 100                      # 超长段落按句子拆分时，相邻片段最多重叠多少字符（按整句取，不从半句开始；原为 50，整句重叠下几乎总是 0，见 开发与评估记录.md）
@@ -43,6 +46,9 @@ TEMPERATURE = 0.1                        # 低温度，回答更稳定、少发�
 NUM_CTX = 4096                           # 模型上下文长度（token）
 KEEP_ALIVE = "30m"                       # 模型在内存里常驻多久，演示期间避免反复冷启动
 FALLBACK_TEXT = "资料中没有找到相关内容，建议咨询相关部门负责人"   # 兜底话术，由代码固定输出
+USE_IMAGES = True                        # 检索时是否包含图片片段（False＝只检索文字资料，第三轮消融对比用）
+LINK_EXPAND = True                       # 命中图片片段时，是否到它关联的资料里补检索（方案 B：按图上的文件编号关联）
+LINK_MAX = 2                             # 关联补检索最多补几个片段：每个命中的图片片段各补 1 个，总数不超过 LINK_MAX（上下文最多 TOP_K + LINK_MAX 个）
 # =======================================================================
 
 # 直连本机 Ollama，不读系统代理环境变量（电脑配了系统代理时，断网后代理也不可用，会导致连不上本机服务）
@@ -68,6 +74,7 @@ SYSTEM_PROMPT = """你是恒锐模具钢有限公司的内部知识库助手，�
    - 资料里是流程的，按资料的步骤顺序说明每一步由谁、在多长时间内、做什么；
    - 保留资料中的具体数字、单位和审批人；cited 填写用到的片段编号。
 4. answerable 为 false 时，answer 填空字符串，cited 填空列表。
+5. 来源标为"图片"的片段，是视觉模型从照片或示意图里识别出的内容，手写字可能有识别误差；判断记录里的数值是否符合要求时，以规范类资料里的规定为准。
 只输出 JSON。"""
 
 
@@ -82,10 +89,8 @@ def embed(texts: list[str]) -> list[list[float]]:
     return _client.embed(model=EMBED_MODEL, input=texts, keep_alive=KEEP_ALIVE)["embeddings"]
 
 
-def retrieve(question: str, top_k: int = TOP_K) -> list[dict]:
-    """检索最相似的 top_k 个片段，返回文本、来源和相似度分数（1 - 余弦距离）。"""
-    col = get_collection()
-    res = col.query(query_embeddings=embed([question]), n_results=top_k)
+def _to_chunks(res: dict) -> list[dict]:
+    """把 Chroma 查询结果整理成片段列表。"""
     chunks = []
     for cid, doc, meta, dist in zip(res["ids"][0], res["documents"][0], res["metadatas"][0], res["distances"][0]):
         chunks.append({
@@ -93,26 +98,77 @@ def retrieve(question: str, top_k: int = TOP_K) -> list[dict]:
             "text": doc,
             "source": meta["source"],
             "section": meta["section"],
+            "type": meta.get("type", "text"),
+            "related": [s for s in meta.get("related", "").split(",") if s],
             "score": round(1 - dist, 4),
         })
     return chunks
+
+
+def retrieve(question: str, top_k: int = TOP_K, use_images: bool | None = None,
+             q_vec: list[float] | None = None) -> list[dict]:
+    """检索最相似的 top_k 个片段，返回文本、来源和相似度分数（1 - 余弦距离）。use_images=False 时只检索文字资料。"""
+    use_images = USE_IMAGES if use_images is None else use_images
+    col = get_collection()
+    kwargs = {} if use_images else {"where": {"type": "text"}}
+    res = col.query(query_embeddings=[q_vec or embed([question])[0]], n_results=top_k, **kwargs)
+    return _to_chunks(res)
+
+
+def link_expand(question: str, chunks: list[dict]) -> list[dict]:
+    """方案 B：通过阈值的片段里有图片片段时，只在它关联的资料（图上印的文件编号对应的文件）里补检索，
+    每个图片片段各补 1 个最相关、且不在已有片段里的章节，总数不超过 LINK_MAX，补充片段标 linked=True。
+    补检索的查询 = 原问题 + 该图片片段正文（伪相关反馈）：问题里常用"5 号部件""那台机器"这类指代，
+    直接拿原问题去搜，规范里没有这些词；带上图片内容（部件名、点检项目和数值），才能找到对应章节。
+    每张图单独扩展：只用分数最高的那张时，无关图片（如另一张点检表）排在前面会把扩展带偏。
+    "文件信息"章节只有编号和版本，不作为补充候选。"""
+    images = sorted((c for c in chunks if c["passed"] and c["type"] == "image" and c["related"]),
+                    key=lambda c: c["score"], reverse=True)
+    have = {c["id"] for c in chunks}
+    col = get_collection()
+    extra = []
+    for img in images:
+        if len(extra) >= LINK_MAX:
+            break
+        q_vec = embed([f"{question}\n{img['text']}"])[0]
+        res = col.query(query_embeddings=[q_vec], n_results=len(have) + 4,
+                        where={"$and": [{"type": "text"}, {"source": {"$in": img["related"]}},
+                                        {"section": {"$ne": "文件信息"}}]})
+        new = [c for c in _to_chunks(res) if c["id"] not in have][:1]
+        for c in new:
+            c.update(passed=True, cited=False, linked=True, linked_from=img["source"])   # 不再过阈值：按文档引用关系找来的
+            have.add(c["id"])
+        extra += new
+    return extra
 
 
 def build_prompt(question: str, chunks: list[dict]) -> str:
     """把通过阈值的片段编号后拼进提示词。"""
     parts = []
     for i, c in enumerate(chunks, start=1):
-        parts.append(f"[片段{i}]（来源：{c['source']} · {c['section']}）\n{c['text']}")
+        if c.get("type") == "image":
+            src = f"图片 {c['source']}（视觉模型识别结果）"
+        elif c.get("linked"):
+            src = f"{c['source']} · {c['section']}（按图片上的文件编号关联补充）"
+        else:
+            src = f"{c['source']} · {c['section']}"
+        parts.append(f"[片段{i}]（来源：{src}）\n{c['text']}")
     return "【资料片段】\n" + "\n\n".join(parts) + f"\n\n【问题】{question}"
 
 
-def search(question: str) -> dict:
-    """检索 + 第 1 层阈值粗筛（不调大模型，界面可以先把这一步的结果显示出来）。"""
+def search(question: str, use_images: bool | None = None, link: bool | None = None) -> dict:
+    """检索 + 第 1 层阈值粗筛（不调大模型，界面可以先把这一步的结果显示出来）。
+    命中图片片段且开启关联时，再做一次关联补检索（片段数最多 TOP_K + LINK_MAX）。"""
+    link = LINK_EXPAND if link is None else link
     t0 = time.perf_counter()
-    all_chunks = retrieve(question)
+    q_vec = embed([question])[0]
+    all_chunks = retrieve(question, use_images=use_images, q_vec=q_vec)
     for c in all_chunks:
         c["passed"] = c["score"] >= SCORE_THRESHOLD
         c["cited"] = False
+        c["linked"] = False
+    if link:
+        all_chunks += link_expand(question, all_chunks)
     return {
         "question": question,
         "chunks": all_chunks,
@@ -164,9 +220,9 @@ def answer(result: dict, model: str | None = None) -> dict:
     return {**result, "answer": text, "fallback": False, "reason": "ok"}
 
 
-def ask(question: str, model: str | None = None) -> dict:
+def ask(question: str, model: str | None = None, use_images: bool | None = None, link: bool | None = None) -> dict:
     """完整问答：检索 → 三层把关 → 返回回答、引用片段、是否兜底及各阶段耗时。"""
-    return answer(search(question), model)
+    return answer(search(question, use_images=use_images, link=link), model)
 
 
 def warm_up(model: str | None = None) -> None:

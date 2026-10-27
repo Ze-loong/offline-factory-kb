@@ -1,0 +1,97 @@
+{
+  "image": "S3-平面磨床结构示意图-M7150.png",
+  "image_sha256": "84edfee5c75906b8032ac31cc2c07f100afbcc6420e5c7441dc3588e1f6fe9a9",
+  "model": "qwen3-vl:4b-instruct",
+  "prompt_version": "v3+tick1",
+  "options": {
+    "max_side": 1280,
+    "temperature": 0.1,
+    "num_ctx": 8192,
+    "num_predict": 2000
+  },
+  "created": "2026-10-26 07:35:57",
+  "orig_size": [
+    1260,
+    790
+  ],
+  "sent_size": [
+    1260,
+    790
+  ],
+  "timing": {
+    "wall_s": 78.02,
+    "load_s": 0.01,
+    "prompt_eval_s": 41.78,
+    "eval_s": 36.06
+  },
+  "prompt_tokens": 1527,
+  "output_tokens": 447,
+  "done_reason": "stop",
+  "json_ok": true,
+  "doc_refs": [
+    "HR-SB-003"
+  ],
+  "parsed": {
+    "image_type": "设备结构图",
+    "title": "恒锐模具有限公司 M7150 平面磨床 主要部件示意图",
+    "visible_text": [
+      "恒锐模具有限公司 M7150 平面磨床 主要部件示意图",
+      "图号：HR-SB-003-F2",
+      "配套文件：《设备日点检规范》HR-SB-003（第四节 平面磨床）",
+      "注：示意图，非比例绘制。"
+    ],
+    "fields": [
+      {
+        "name": "1",
+        "value": "砂轮"
+      },
+      {
+        "name": "2",
+        "value": "砂轮防护罩"
+      },
+      {
+        "name": "3",
+        "value": "磨头"
+      },
+      {
+        "name": "4",
+        "value": "立柱"
+      },
+      {
+        "name": "5",
+        "value": "电磁吸盘"
+      },
+      {
+        "name": "6",
+        "value": "工作台"
+      },
+      {
+        "name": "7",
+        "value": "导轨"
+      },
+      {
+        "name": "8",
+        "value": "液压油箱（带油标）"
+      },
+      {
+        "name": "9",
+        "value": "冷却液箱"
+      },
+      {
+        "name": "10",
+        "value": "冷却液喷嘴"
+      },
+      {
+        "name": "11",
+        "value": "操作面板"
+      }
+    ],
+    "doc_refs": [
+      "HR-SB-003-F2",
+      "HR-SB-003"
+    ],
+    "summary": "这是一张恒锐模具有限公司M7150平面磨床的主要部件示意图，标注了11个关键部件，如砂轮、立柱、工作台、操作面板等，并附有图号和配套文件编号。"
+  },
+  "raw": "{\n  \"image_type\": \"设备结构图\",\n  \"title\": \"恒锐模具有限公司 M7150 平面磨床 主要部件示意图\",\n  \"visible_text\": [\n    \"恒锐模具有限公司 M7150 平面磨床 主要部件示意图\",\n    \"图号：HR-SB-003-F2\",\n    \"配套文件：《设备日点检规范》HR-SB-003（第四节 平面磨床）\",\n    \"注：示意图，非比例绘制。\"\n  ],\n  \"fields\": [\n    {\n      \"name\": \"1\",\n      \"value\": \"砂轮\"\n    },\n    {\n      \"name\": \"2\",\n      \"value\": \"砂轮防护罩\"\n    },\n    {\n      \"name\": \"3\",\n      \"value\": \"磨头\"\n    },\n    {\n      \"name\": \"4\",\n      \"value\": \"立柱\"\n    },\n    {\n      \"name\": \"5\",\n      \"value\": \"电磁吸盘\"\n    },\n    {\n      \"name\": \"6\",\n      \"value\": \"工作台\"\n    },\n    {\n      \"name\": \"7\",\n      \"value\": \"导轨\"\n    },\n    {\n      \"name\": \"8\",\n      \"value\": \"液压油箱（带油标）\"\n    },\n    {\n      \"name\": \"9\",\n      \"value\": \"冷却液箱\"\n    },\n    {\n      \"name\": \"10\",\n      \"value\": \"冷却液喷嘴\"\n    },\n    {\n      \"name\": \"11\",\n      \"value\": \"操作面板\"\n    }\n  ],\n  \"doc_refs\": [\n    \"HR-SB-003-F2\",\n    \"HR-SB-003\"\n  ],\n  \"summary\": \"这是一张恒锐模具有限公司M7150平面磨床的主要部件示意图，标注了11个关键部件，如砂轮、立柱、工作台、操作面板等，并附有图号和配套文件编号。\"\n}",
+  "tick_check": null
+}

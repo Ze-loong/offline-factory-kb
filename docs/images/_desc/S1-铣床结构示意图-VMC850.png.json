@@ -1,0 +1,95 @@
+{
+  "image": "S1-铣床结构示意图-VMC850.png",
+  "image_sha256": "75ed16f4bed104ebaf855dbd5f3cca29a5c59cc0390ad24e904aa951252a38e6",
+  "model": "qwen3-vl:4b-instruct",
+  "prompt_version": "v3+tick1",
+  "options": {
+    "max_side": 1280,
+    "temperature": 0.1,
+    "num_ctx": 8192,
+    "num_predict": 2000
+  },
+  "created": "2026-10-26 07:33:17",
+  "orig_size": [
+    1260,
+    790
+  ],
+  "sent_size": [
+    1260,
+    790
+  ],
+  "timing": {
+    "wall_s": 79.4,
+    "load_s": 0.01,
+    "prompt_eval_s": 41.71,
+    "eval_s": 37.54
+  },
+  "prompt_tokens": 1527,
+  "output_tokens": 465,
+  "done_reason": "stop",
+  "json_ok": true,
+  "doc_refs": [
+    "HR-SB-011",
+    "HR-SB-003"
+  ],
+  "parsed": {
+    "image_type": "设备结构图",
+    "title": "恒锐模具钢有限公司 VMC850 立式加工中心（数控铣床）主要部件示意图",
+    "visible_text": [
+      "恒锐模具钢有限公司 VMC850 立式加工中心（数控铣床）主要部件示意图",
+      "图号：HR-SB-011-F1",
+      "配套文件：《数控铣床常见故障处理手册》HR-SB-011、《设备日点检规范》HR-SB-003",
+      "注：示意图，非比例绘制。"
+    ],
+    "fields": [
+      {
+        "name": "1",
+        "value": "主轴"
+      },
+      {
+        "name": "2",
+        "value": "主轴箱"
+      },
+      {
+        "name": "3",
+        "value": "刀库（16刀位）"
+      },
+      {
+        "name": "4",
+        "value": "换刀臂"
+      },
+      {
+        "name": "5",
+        "value": "主轴冷却机"
+      },
+      {
+        "name": "6",
+        "value": "气压表（气源三联件）"
+      },
+      {
+        "name": "7",
+        "value": "集中润滑泵（带油标）"
+      },
+      {
+        "name": "8",
+        "value": "工作台及X/Y导轨"
+      },
+      {
+        "name": "9",
+        "value": "电气柜"
+      },
+      {
+        "name": "10",
+        "value": "操作面板"
+      }
+    ],
+    "doc_refs": [
+      "HR-SB-011-F1",
+      "HR-SB-011",
+      "HR-SB-003"
+    ],
+    "summary": "该图是恒锐模具钢有限公司 VMC850 立式加工中心（数控铣床）的主要部件示意图，标注了10个关键部件及其名称，用于设备结构认知和日常点检。"
+  },
+  "raw": "{\n  \"image_type\": \"设备结构图\",\n  \"title\": \"恒锐模具钢有限公司 VMC850 立式加工中心（数控铣床）主要部件示意图\",\n  \"visible_text\": [\n    \"恒锐模具钢有限公司 VMC850 立式加工中心（数控铣床）主要部件示意图\",\n    \"图号：HR-SB-011-F1\",\n    \"配套文件：《数控铣床常见故障处理手册》HR-SB-011、《设备日点检规范》HR-SB-003\",\n    \"注：示意图，非比例绘制。\"\n  ],\n  \"fields\": [\n    {\n      \"name\": \"1\",\n      \"value\": \"主轴\"\n    },\n    {\n      \"name\": \"2\",\n      \"value\": \"主轴箱\"\n    },\n    {\n      \"name\": \"3\",\n      \"value\": \"刀库（16刀位）\"\n    },\n    {\n      \"name\": \"4\",\n      \"value\": \"换刀臂\"\n    },\n    {\n      \"name\": \"5\",\n      \"value\": \"主轴冷却机\"\n    },\n    {\n      \"name\": \"6\",\n      \"value\": \"气压表（气源三联件）\"\n    },\n    {\n      \"name\": \"7\",\n      \"value\": \"集中润滑泵（带油标）\"\n    },\n    {\n      \"name\": \"8\",\n      \"value\": \"工作台及X/Y导轨\"\n    },\n    {\n      \"name\": \"9\",\n      \"value\": \"电气柜\"\n    },\n    {\n      \"name\": \"10\",\n      \"value\": \"操作面板\"\n    }\n  ],\n  \"doc_refs\": [\n    \"HR-SB-011-F1\",\n    \"HR-SB-011\",\n    \"HR-SB-003\"\n  ],\n  \"summary\": \"该图是恒锐模具钢有限公司 VMC850 立式加工中心（数控铣床）的主要部件示意图，标注了10个关键部件及其名称，用于设备结构认知和日常点检。\"\n}",
+  "tick_check": null
+}

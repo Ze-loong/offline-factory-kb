@@ -1,0 +1,2212 @@
+{
+  "name": "eval_mm_images_link",
+  "use_images": true,
+  "link": true,
+  "link_max": 2,
+  "review_files": [
+    "tests/review_mm_3b.json",
+    "tests/review_v2_3b.json"
+  ],
+  "model": "qwen2.5:3b",
+  "threshold": 0.5,
+  "top_k": 3,
+  "generated": "2026-10-26 08:29:08",
+  "questions_sha256": "995952141173030293e690ce3540759561ebcbac3a8c265179d20621b4bc4aef",
+  "summary": {
+    "all": {
+      "by_category": {
+        "mm_image": {
+          "n": 7,
+          "retrieval_hit": 7,
+          "retrieval_hit_all": 7,
+          "auto_correct": 4,
+          "final_correct": 5,
+          "false_refusal": 0,
+          "wrong_answer": 3,
+          "layer": {
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        "mm_joint": {
+          "n": 9,
+          "retrieval_hit": 9,
+          "retrieval_hit_all": 7,
+          "auto_correct": 4,
+          "final_correct": 3,
+          "false_refusal": 0,
+          "wrong_answer": 5,
+          "layer": {
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        "mm_negative": {
+          "n": 6,
+          "correct_refusal": 4,
+          "hallucination_auto": 2,
+          "final_correct": 4,
+          "layer": {
+            "1": 0,
+            "2": 4,
+            "3": 0
+          }
+        },
+        "ALL_ANSWERABLE": {
+          "n": 16,
+          "retrieval_hit": 16,
+          "retrieval_hit_all": 14,
+          "auto_correct": 8,
+          "final_correct": 8,
+          "false_refusal": 0,
+          "wrong_answer": 8,
+          "layer": {
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        "ALL_NEGATIVE": {
+          "n": 6,
+          "correct_refusal": 4,
+          "hallucination_auto": 2,
+          "final_correct": 4,
+          "layer": {
+            "1": 0,
+            "2": 4,
+            "3": 0
+          }
+        }
+      },
+      "overall": {
+        "n": 22,
+        "layer": {
+          "1": 0,
+          "2": 4,
+          "3": 0
+        },
+        "answered": 18,
+        "retrieve_s": {
+          "median": 1.48,
+          "p90": 1.6,
+          "n": 22
+        },
+        "llm_s": {
+          "median": 12.475,
+          "p90": 15.35,
+          "n": 22
+        },
+        "top3_same_section_dup": 0,
+        "image_in_context": 22,
+        "with_linked": 22
+      }
+    },
+    "test": {
+      "by_category": {
+        "mm_image": {
+          "n": 7,
+          "retrieval_hit": 7,
+          "retrieval_hit_all": 7,
+          "auto_correct": 4,
+          "final_correct": 5,
+          "false_refusal": 0,
+          "wrong_answer": 3,
+          "layer": {
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        "mm_joint": {
+          "n": 9,
+          "retrieval_hit": 9,
+          "retrieval_hit_all": 7,
+          "auto_correct": 4,
+          "final_correct": 3,
+          "false_refusal": 0,
+          "wrong_answer": 5,
+          "layer": {
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        "mm_negative": {
+          "n": 6,
+          "correct_refusal": 4,
+          "hallucination_auto": 2,
+          "final_correct": 4,
+          "layer": {
+            "1": 0,
+            "2": 4,
+            "3": 0
+          }
+        },
+        "ALL_ANSWERABLE": {
+          "n": 16,
+          "retrieval_hit": 16,
+          "retrieval_hit_all": 14,
+          "auto_correct": 8,
+          "final_correct": 8,
+          "false_refusal": 0,
+          "wrong_answer": 8,
+          "layer": {
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        "ALL_NEGATIVE": {
+          "n": 6,
+          "correct_refusal": 4,
+          "hallucination_auto": 2,
+          "final_correct": 4,
+          "layer": {
+            "1": 0,
+            "2": 4,
+            "3": 0
+          }
+        }
+      },
+      "overall": {
+        "n": 22,
+        "layer": {
+          "1": 0,
+          "2": 4,
+          "3": 0
+        },
+        "answered": 18,
+        "retrieve_s": {
+          "median": 1.48,
+          "p90": 1.6,
+          "n": 22
+        },
+        "llm_s": {
+          "median": 12.475,
+          "p90": 15.35,
+          "n": 22
+        },
+        "top3_same_section_dup": 0,
+        "image_in_context": 22,
+        "with_linked": 22
+      }
+    }
+  },
+  "records": [
+    {
+      "id": "MA01",
+      "category": "mm_image",
+      "split": "test",
+      "origin": "mm",
+      "question": "VMC850-03 在 2026 年 10 月 22 日点检时，主轴温度测得多少？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "P1-点检表-铣床VMC850-03-20261022.jpg#1",
+          "source": "P1-点检表-铣床VMC850-03-20261022.jpg#图片",
+          "score": 0.7227,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P2-点检表-铣床VMC850-05-20260715.jpg#1",
+          "source": "P2-点检表-铣床VMC850-05-20260715.jpg#图片",
+          "score": 0.7029,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.5827,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#2",
+          "source": "设备点检规范.md#一、目的与适用范围",
+          "score": 0.6924,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#5",
+          "source": "设备点检规范.md#四、平面磨床日点检项目",
+          "score": 0.6688,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.7227,
+      "answer": "VMC850-03 在 2026 年 10 月 22 日点检时，主轴温度测得 62 °C。",
+      "answer_hash": "1e0b0982c66d",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"VMC850-03 在 2026 年 10 月 22 日点检时，主轴温度测得 62 °C。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 1.66,
+      "llm_s": 12.19,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "62"
+      ],
+      "expected_source": [
+        [
+          "P1-点检表-铣床VMC850-03-20261022.jpg#图片"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "MA02",
+      "category": "mm_image",
+      "split": "test",
+      "origin": "mm",
+      "question": "VMC850 数控铣床部件示意图中，5 号部件是什么？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "S1-铣床结构示意图-VMC850.png#1",
+          "source": "S1-铣床结构示意图-VMC850.png#图片",
+          "score": 0.7463,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备故障处理手册-数控铣床.md#1",
+          "source": "设备故障处理手册-数控铣床.md#文件信息",
+          "score": 0.6361,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "P2-点检表-铣床VMC850-05-20260715.jpg#1",
+          "source": "P2-点检表-铣床VMC850-05-20260715.jpg#图片",
+          "score": 0.6277,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备故障处理手册-数控铣床.md#8",
+          "source": "设备故障处理手册-数控铣床.md#五、常见报警代码",
+          "score": 0.7039,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.8169,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.7463,
+      "answer": "VMC850 数控铣床部件示意图中，5 号部件是主轴冷却机。",
+      "answer_hash": "827b88e99fd7",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"VMC850 数控铣床部件示意图中，5 号部件是主轴冷却机。\",\n  \"cited\": [\n    1\n  ]\n}",
+      "retrieve_s": 1.43,
+      "llm_s": 13.62,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "主轴冷却机"
+      ],
+      "expected_source": [
+        [
+          "S1-铣床结构示意图-VMC850.png#图片"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "MA03",
+      "category": "mm_image",
+      "split": "test",
+      "origin": "mm",
+      "question": "真空高压气淬炉部件示意图里，罗茨泵是几号部件？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "S2-真空炉结构示意图-VQ1200.png#1",
+          "source": "S2-真空炉结构示意图-VQ1200.png#图片",
+          "score": 0.6568,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#1",
+          "source": "设备操作规程-真空高压气淬炉.md#文件信息",
+          "score": 0.5474,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "P4-点检表-真空炉VQ1200-01-20261021.jpg#1",
+          "source": "P4-点检表-真空炉VQ1200-01-20261021.jpg#图片",
+          "score": 0.5394,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#4",
+          "source": "设备操作规程-真空高压气淬炉.md#三、操作步骤",
+          "score": 0.7227,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#3",
+          "source": "设备操作规程-真空高压气淬炉.md#二、开炉前点检项目",
+          "score": 0.8057,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.6568,
+      "answer": "罗茨泵是9号部件。",
+      "answer_hash": "42e080be6f61",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"罗茨泵是9号部件。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 1.47,
+      "llm_s": 9.44,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        [
+          "8号",
+          "第8",
+          "标号8",
+          "编号8",
+          "为8",
+          "是8"
+        ]
+      ],
+      "expected_source": [
+        [
+          "S2-真空炉结构示意图-VQ1200.png#图片"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [
+        [
+          "8号",
+          "第8",
+          "标号8",
+          "编号8",
+          "为8",
+          "是8"
+        ]
+      ],
+      "auto_correct": false,
+      "auto_outcome": "wrong_answer",
+      "review": {
+        "answer_hash": "42e080be6f61",
+        "verdict": "real_error",
+        "comment": "上下文里写的是\"8 罗茨泵\"，3b 答成 9 号——生成错误，不是识别错误",
+        "run": "eval_mm_images_3b.json",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "MA04",
+      "category": "mm_image",
+      "split": "test",
+      "origin": "mm",
+      "question": "M7150-02 平面磨床在 10 月 20 日夜班点检时，冷却液浓度测得多少？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "P3-点检表-磨床M7150-02-20261020.jpg#1",
+          "source": "P3-点检表-磨床M7150-02-20261020.jpg#图片",
+          "score": 0.7824,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P1-点检表-铣床VMC850-03-20261022.jpg#1",
+          "source": "P1-点检表-铣床VMC850-03-20261022.jpg#图片",
+          "score": 0.6862,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P2-点检表-铣床VMC850-05-20260715.jpg#1",
+          "source": "P2-点检表-铣床VMC850-05-20260715.jpg#图片",
+          "score": 0.685,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备点检规范.md#5",
+          "source": "设备点检规范.md#四、平面磨床日点检项目",
+          "score": 0.7389,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.7975,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.7824,
+      "answer": "M7150-02 平面磨床在 10 月 20 日夜班点检时，冷却液浓度为 2.5%。",
+      "answer_hash": "2471bc9d5750",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"M7150-02 平面磨床在 10 月 20 日夜班点检时，冷却液浓度为 2.5%。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 1.57,
+      "llm_s": 11.39,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "2.5"
+      ],
+      "expected_source": [
+        [
+          "P3-点检表-磨床M7150-02-20261020.jpg#图片"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "MA05",
+      "category": "mm_image",
+      "split": "test",
+      "origin": "mm",
+      "question": "7 月 15 日 VMC850-05 的日点检是谁做的？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "P2-点检表-铣床VMC850-05-20260715.jpg#1",
+          "source": "P2-点检表-铣床VMC850-05-20260715.jpg#图片",
+          "score": 0.612,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P1-点检表-铣床VMC850-03-20261022.jpg#1",
+          "source": "P1-点检表-铣床VMC850-03-20261022.jpg#图片",
+          "score": 0.6111,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备点检规范.md#2",
+          "source": "设备点检规范.md#一、目的与适用范围",
+          "score": 0.5651,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.8102,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#5",
+          "source": "设备点检规范.md#四、平面磨床日点检项目",
+          "score": 0.6984,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.612,
+      "answer": "7 月 15 日 VMC850-05 的日点检是由王强做的。",
+      "answer_hash": "6be6e5bf1380",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"7 月 15 日 VMC850-05 的日点检是由王强做的。\",\n  \"cited\": [\n    1\n  ]\n}",
+      "retrieve_s": 1.49,
+      "llm_s": 11.44,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "王强"
+      ],
+      "expected_source": [
+        [
+          "P2-点检表-铣床VMC850-05-20260715.jpg#图片"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "MA06",
+      "category": "mm_image",
+      "split": "test",
+      "origin": "mm",
+      "question": "VQ-1200-01 真空炉在 10 月 21 日开炉前点检时，冷态极限真空度是多少？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "P4-点检表-真空炉VQ1200-01-20261021.jpg#1",
+          "source": "P4-点检表-真空炉VQ1200-01-20261021.jpg#图片",
+          "score": 0.7436,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#3",
+          "source": "设备操作规程-真空高压气淬炉.md#二、开炉前点检项目",
+          "score": 0.6628,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#2",
+          "source": "设备操作规程-真空高压气淬炉.md#一、适用范围与人员要求",
+          "score": 0.6473,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#6",
+          "source": "设备操作规程-真空高压气淬炉.md#五、安全注意事项",
+          "score": 0.7428,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 1,
+      "image_in_context": true,
+      "top1_score": 0.7436,
+      "answer": "冷态极限真空度：4，判定 正常。",
+      "answer_hash": "8dde0a10d087",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"冷态极限真空度：4，判定 正常。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.94,
+      "llm_s": 6.3,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        [
+          "4pa",
+          "4帕"
+        ]
+      ],
+      "expected_source": [
+        [
+          "P4-点检表-真空炉VQ1200-01-20261021.jpg#图片"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [
+        [
+          "4pa",
+          "4帕"
+        ]
+      ],
+      "auto_correct": false,
+      "auto_outcome": "wrong_answer",
+      "review": {
+        "answer_hash": "8dde0a10d087",
+        "verdict": "scoring_error",
+        "comment": "数值 4 正确；单位 Pa 在视觉识别第一遍就丢了（描述里只有\"4\"），回答如实转述",
+        "run": "eval_mm_images_link_3b_run2.json",
+        "stale": false
+      },
+      "final_correct": true
+    },
+    {
+      "id": "MA07",
+      "category": "mm_image",
+      "split": "test",
+      "origin": "mm",
+      "question": "平面磨床部件示意图中，电磁吸盘是几号部件？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "S3-平面磨床结构示意图-M7150.png#1",
+          "source": "S3-平面磨床结构示意图-M7150.png#图片",
+          "score": 0.6772,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "S1-铣床结构示意图-VMC850.png#1",
+          "source": "S1-铣床结构示意图-VMC850.png#图片",
+          "score": 0.5969,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P3-点检表-磨床M7150-02-20261020.jpg#1",
+          "source": "P3-点检表-磨床M7150-02-20261020.jpg#图片",
+          "score": 0.5633,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备点检规范.md#5",
+          "source": "设备点检规范.md#四、平面磨床日点检项目",
+          "score": 0.6548,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备故障处理手册-数控铣床.md#8",
+          "source": "设备故障处理手册-数控铣床.md#五、常见报警代码",
+          "score": 0.6723,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.6772,
+      "answer": "平面磨床部件示意图中，电磁吸盘是6号部件。",
+      "answer_hash": "fa13835357a5",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"平面磨床部件示意图中，电磁吸盘是6号部件。\",\n  \"cited\": [\n    1\n  ]\n}",
+      "retrieve_s": 1.15,
+      "llm_s": 15.35,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        [
+          "5号",
+          "第5",
+          "标号5",
+          "编号5",
+          "为5",
+          "是5"
+        ]
+      ],
+      "expected_source": [
+        [
+          "S3-平面磨床结构示意图-M7150.png#图片"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1
+      ],
+      "missing_keywords": [
+        [
+          "5号",
+          "第5",
+          "标号5",
+          "编号5",
+          "为5",
+          "是5"
+        ]
+      ],
+      "auto_correct": false,
+      "auto_outcome": "wrong_answer",
+      "review": {
+        "answer_hash": "fa13835357a5",
+        "verdict": "real_error",
+        "comment": "答成 6 号（S3 里 6 是工作台）；只加图片时两次都答对 5 号，关联补充多进了 2 个片段、上下文里还有 S1 的部件清单，模型混了",
+        "run": "eval_mm_images_link_3b.json",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "MB01",
+      "category": "mm_joint",
+      "split": "test",
+      "origin": "mm",
+      "question": "10 月 22 日 VMC850-03 点检时，主轴温度正常吗？应该怎么处理？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "P1-点检表-铣床VMC850-03-20261022.jpg#1",
+          "source": "P1-点检表-铣床VMC850-03-20261022.jpg#图片",
+          "score": 0.7705,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P2-点检表-铣床VMC850-05-20260715.jpg#1",
+          "source": "P2-点检表-铣床VMC850-05-20260715.jpg#图片",
+          "score": 0.7642,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备故障处理手册-数控铣床.md#3",
+          "source": "设备故障处理手册-数控铣床.md#二、主轴过热",
+          "score": 0.6592,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.8316,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#2",
+          "source": "设备点检规范.md#一、目的与适用范围",
+          "score": 0.6916,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.7705,
+      "answer": "10 月 22 日 VMC850-03 点检时，主轴温度为 62 °C，根据资料片段3中的描述，主轴温度超过环境温度 +15℃或绝对值超过 55℃即视为温度偏高，因此主轴温度是异常的。异常情况说明及处理：主轴温度高，已报到王组长；班组长确认：（空）；设备员抽查：（空）。处理方式是报到王组长，由班组长确认后，设备员进行抽查。",
+      "answer_hash": "9de75e5d780e",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"10 月 22 日 VMC850-03 点检时，主轴温度为 62 °C，根据资料片段3中的描述，主轴温度超过环境温度 +15℃或绝对值超过 55℃即视为温度偏高，因此主轴温度是异常的。异常情况说明及处理：主轴温度高，已报到王组长；班组长确认：（空）；设备员抽查：（空）。处理方式是报到王组长，由班组长确认后，设备员进行抽查。\",\n  \"cited\": [1, 3]\n}",
+      "retrieve_s": 1.55,
+      "llm_s": 17.12,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "60",
+        [
+          "停机"
+        ],
+        [
+          "设备员"
+        ]
+      ],
+      "expected_source": [
+        [
+          "P1-点检表-铣床VMC850-03-20261022.jpg#图片"
+        ],
+        [
+          "设备点检规范.md#三、数控铣床日点检项目",
+          "设备故障处理手册-数控铣床.md#二、主轴过热"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1,
+        3
+      ],
+      "missing_keywords": [
+        "60",
+        [
+          "停机"
+        ]
+      ],
+      "auto_correct": false,
+      "auto_outcome": "wrong_answer",
+      "review": {
+        "answer_hash": "9de75e5d780e",
+        "verdict": "real_error",
+        "comment": "判定异常但没说超过 60℃ 要立即停机，处理只写了\"报到王组长\"（识别错误被原样搬进回答）",
+        "run": "eval_mm_images_link_3b_run2.json",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "MB02",
+      "category": "mm_joint",
+      "split": "test",
+      "origin": "mm",
+      "question": "10 月 22 日 VMC850-03 的点检表上，气源压力判定为\"正常\"，这个判定对吗？这台机床当时能启动换刀吗？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "P1-点检表-铣床VMC850-03-20261022.jpg#1",
+          "source": "P1-点检表-铣床VMC850-03-20261022.jpg#图片",
+          "score": 0.7074,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P2-点检表-铣床VMC850-05-20260715.jpg#1",
+          "source": "P2-点检表-铣床VMC850-05-20260715.jpg#图片",
+          "score": 0.702,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备故障处理手册-数控铣床.md#7",
+          "source": "设备故障处理手册-数控铣床.md#四、自动换刀故障",
+          "score": 0.6494,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.7722,
+          "passed": true,
+          "cited": true,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#2",
+          "source": "设备点检规范.md#一、目的与适用范围",
+          "score": 0.6796,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.7074,
+      "answer": "根据片段1，10月22日VNC850-03的气源压力为0.45 MPa，判定为正常。根据片段4中的正常范围，气源压力应在0.5～0.7 MPa之间。因此，0.45 MPa在正常范围内，判定为正常是正确的。由于气源压力低于0.5 MPa，机床在启动换刀前需要检查气源总阀和机床进气过滤器，并排放过滤器积水后压力恢复到0.5～0.7 MPa。所以，这台机床当时不能启动换刀。",
+      "answer_hash": "3c795fe8d5cc",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"根据片段1，10月22日VNC850-03的气源压力为0.45 MPa，判定为正常。根据片段4中的正常范围，气源压力应在0.5～0.7 MPa之间。因此，0.45 MPa在正常范围内，判定为正常是正确的。由于气源压力低于0.5 MPa，机床在启动换刀前需要检查气源总阀和机床进气过滤器，并排放过滤器积水后压力恢复到0.5～0.7 MPa。所以，这台机床当时不能启动换刀。\",\n  \"cited\": [1, 4]\n}",
+      "retrieve_s": 1.69,
+      "llm_s": 18.03,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "0.5",
+        [
+          "不能",
+          "不得",
+          "不可",
+          "不行",
+          "不允许",
+          "禁止"
+        ]
+      ],
+      "expected_source": [
+        [
+          "P1-点检表-铣床VMC850-03-20261022.jpg#图片"
+        ],
+        [
+          "设备点检规范.md#三、数控铣床日点检项目"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1,
+        6
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": {
+        "answer_hash": "3c795fe8d5cc",
+        "verdict": "false_pass",
+        "comment": "\"不能启动换刀\"对，但同时说\"0.45 MPa 判定为正常是正确的\"——前后矛盾，问题第一问答错",
+        "run": "eval_mm_images_link_3b_run2.json",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "MB03",
+      "category": "mm_joint",
+      "split": "test",
+      "origin": "mm",
+      "question": "7 月 15 日 VMC850-05 点检记录的主轴温度符合点检规范吗？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "P2-点检表-铣床VMC850-05-20260715.jpg#1",
+          "source": "P2-点检表-铣床VMC850-05-20260715.jpg#图片",
+          "score": 0.7658,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P1-点检表-铣床VMC850-03-20261022.jpg#1",
+          "source": "P1-点检表-铣床VMC850-03-20261022.jpg#图片",
+          "score": 0.7656,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.6538,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#2",
+          "source": "设备点检规范.md#一、目的与适用范围",
+          "score": 0.7229,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#5",
+          "source": "设备点检规范.md#四、平面磨床日点检项目",
+          "score": 0.6913,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.7658,
+      "answer": "点检记录中主轴温度为 53 °C，根据点检规范，主轴温度的正常范围是不高于环境温度 +15℃，且绝对值不超过 55℃。7 月 15 日的环境温度为 36 °C，因此正常范围应为 51 °C 至 71 °C。53 °C 在正常范围内，所以符合点检规范。",
+      "answer_hash": "55ec85052a53",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"点检记录中主轴温度为 53 °C，根据点检规范，主轴温度的正常范围是不高于环境温度 +15℃，且绝对值不超过 55℃。7 月 15 日的环境温度为 36 °C，因此正常范围应为 51 °C 至 71 °C。53 °C 在正常范围内，所以符合点检规范。\",\n  \"cited\": [\n    1\n  ]\n}",
+      "retrieve_s": 1.54,
+      "llm_s": 15.32,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        [
+          "不符合",
+          "偏高",
+          "超过",
+          "不正常",
+          "异常",
+          "高于"
+        ]
+      ],
+      "expected_source": [
+        [
+          "P2-点检表-铣床VMC850-05-20260715.jpg#图片"
+        ],
+        [
+          "设备点检规范.md#三、数控铣床日点检项目"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1,
+        3
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": {
+        "answer_hash": "55ec85052a53",
+        "verdict": "false_pass",
+        "comment": "读到了 53℃、环境 36℃，但算成\"正常范围 51～71℃，符合\"，结论错误（上限是 51℃）；关键词\"超过\"来自\"不超过 55℃\"",
+        "run": "eval_mm_images_link_3b_run2.json",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "MB04",
+      "category": "mm_joint",
+      "split": "test",
+      "origin": "mm",
+      "question": "7 月 15 日 VMC850-05 点检时主轴发现了什么异常？可能是什么原因？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "P2-点检表-铣床VMC850-05-20260715.jpg#1",
+          "source": "P2-点检表-铣床VMC850-05-20260715.jpg#图片",
+          "score": 0.69,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P1-点检表-铣床VMC850-03-20261022.jpg#1",
+          "source": "P1-点检表-铣床VMC850-03-20261022.jpg#图片",
+          "score": 0.6754,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "S1-铣床结构示意图-VMC850.png#1",
+          "source": "S1-铣床结构示意图-VMC850.png#图片",
+          "score": 0.6161,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.8158,
+          "passed": true,
+          "cited": true,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#2",
+          "source": "设备点检规范.md#一、目的与适用范围",
+          "score": 0.7095,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.69,
+      "answer": "7 月 15 日 VMC850-05 点检时，主轴温度为 53 °C，判定正常。但主轴有尖叫声，判定异常。可能的原因包括主轴润滑不良、主轴轴承磨损、主轴轴承损坏等。",
+      "answer_hash": "9a52e4889adf",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"7 月 15 日 VMC850-05 点检时，主轴温度为 53 °C，判定正常。但主轴有尖叫声，判定异常。可能的原因包括主轴润滑不良、主轴轴承磨损、主轴轴承损坏等。\",\n  \"cited\": [1, 2, 4]\n}",
+      "retrieve_s": 1.55,
+      "llm_s": 13.18,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "尖叫",
+        "润滑不足",
+        "轴承"
+      ],
+      "expected_source": [
+        [
+          "P2-点检表-铣床VMC850-05-20260715.jpg#图片"
+        ],
+        [
+          "设备故障处理手册-数控铣床.md#三、主轴异响与振动"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": false,
+      "expected_rank": [
+        1,
+        4
+      ],
+      "missing_keywords": [
+        "润滑不足"
+      ],
+      "auto_correct": false,
+      "auto_outcome": "wrong_answer",
+      "review": {
+        "answer_hash": "9a52e4889adf",
+        "verdict": "real_error",
+        "comment": "故障手册\"三、主轴异响与振动\"始终没进上下文（关联补进的是点检规范）；回答里的\"润滑不良、轴承磨损\"接近原文，但来自常识，不算答对",
+        "run": "eval_mm_images_link_3b_run2.json",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "MB05",
+      "category": "mm_joint",
+      "split": "test",
+      "origin": "mm",
+      "question": "M7150-02 在 10 月 20 日点检时液压油位有什么问题？应该补加什么油？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "P3-点检表-磨床M7150-02-20261020.jpg#1",
+          "source": "P3-点检表-磨床M7150-02-20261020.jpg#图片",
+          "score": 0.6739,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P1-点检表-铣床VMC850-03-20261022.jpg#1",
+          "source": "P1-点检表-铣床VMC850-03-20261022.jpg#图片",
+          "score": 0.5798,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P2-点检表-铣床VMC850-05-20260715.jpg#1",
+          "source": "P2-点检表-铣床VMC850-05-20260715.jpg#图片",
+          "score": 0.5666,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备点检规范.md#5",
+          "source": "设备点检规范.md#四、平面磨床日点检项目",
+          "score": 0.7787,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.8175,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.6739,
+      "answer": "M7150-02 在 10 月 20 日点检时液压油位偏低，应该补加 46# 抗磨液压油。",
+      "answer_hash": "5137b1944fc9",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"M7150-02 在 10 月 20 日点检时液压油位偏低，应该补加 46# 抗磨液压油。\",\n  \"cited\": [\n    1\n  ]\n}",
+      "retrieve_s": 1.6,
+      "llm_s": 4.42,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        [
+          "1/2",
+          "一半"
+        ],
+        "46"
+      ],
+      "expected_source": [
+        [
+          "P3-点检表-磨床M7150-02-20261020.jpg#图片"
+        ],
+        [
+          "设备点检规范.md#四、平面磨床日点检项目"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1,
+        5
+      ],
+      "missing_keywords": [
+        [
+          "1/2",
+          "一半"
+        ]
+      ],
+      "auto_correct": false,
+      "auto_outcome": "wrong_answer",
+      "review": {
+        "answer_hash": "5137b1944fc9",
+        "verdict": "acceptable",
+        "comment": "\"液压油位偏低，补加 46# 抗磨液压油\"——问题和处理都对，只是没说出\"约 1/2\"",
+        "run": "eval_mm_images_link_3b_run2.json",
+        "stale": false
+      },
+      "final_correct": true
+    },
+    {
+      "id": "MB06",
+      "category": "mm_joint",
+      "split": "test",
+      "origin": "mm",
+      "question": "M7150-02 在 10 月 20 日点检记录的冷却液浓度合格吗？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "P3-点检表-磨床M7150-02-20261020.jpg#1",
+          "source": "P3-点检表-磨床M7150-02-20261020.jpg#图片",
+          "score": 0.6448,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P1-点检表-铣床VMC850-03-20261022.jpg#1",
+          "source": "P1-点检表-铣床VMC850-03-20261022.jpg#图片",
+          "score": 0.5708,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P2-点检表-铣床VMC850-05-20260715.jpg#1",
+          "source": "P2-点检表-铣床VMC850-05-20260715.jpg#图片",
+          "score": 0.5695,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备点检规范.md#5",
+          "source": "设备点检规范.md#四、平面磨床日点检项目",
+          "score": 0.7157,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.7887,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.6448,
+      "answer": "M7150-02 在 10 月 20 日点检记录的冷却液浓度为 2.5 %，根据资料片段[片段4]中的正常范围，冷却液的浓度正常范围是 3%～5%。因此，该记录的冷却液浓度合格。",
+      "answer_hash": "a40f50326dcd",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"M7150-02 在 10 月 20 日点检记录的冷却液浓度为 2.5 %，根据资料片段[片段4]中的正常范围，冷却液的浓度正常范围是 3%～5%。因此，该记录的冷却液浓度合格。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 1.57,
+      "llm_s": 5.42,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        [
+          "不合格",
+          "偏低",
+          "不符合",
+          "低于"
+        ],
+        [
+          "3%~5%",
+          "3~5%"
+        ],
+        "原液"
+      ],
+      "expected_source": [
+        [
+          "P3-点检表-磨床M7150-02-20261020.jpg#图片"
+        ],
+        [
+          "设备点检规范.md#四、平面磨床日点检项目"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1,
+        null
+      ],
+      "missing_keywords": [
+        [
+          "不合格",
+          "偏低",
+          "不符合",
+          "低于"
+        ],
+        "原液"
+      ],
+      "auto_correct": false,
+      "auto_outcome": "wrong_answer",
+      "review": {
+        "answer_hash": "a40f50326dcd",
+        "verdict": "real_error",
+        "comment": "2.5% 和 3%～5% 都在回答里，却得出\"合格\"——3b 数值比较出错",
+        "run": "eval_mm_images_link_3b_run2.json",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "MB07",
+      "category": "mm_joint",
+      "split": "test",
+      "origin": "mm",
+      "question": "VQ-1200-01 在 10 月 21 日那一炉能进行气淬吗？为什么？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "P4-点检表-真空炉VQ1200-01-20261021.jpg#1",
+          "source": "P4-点检表-真空炉VQ1200-01-20261021.jpg#图片",
+          "score": 0.6532,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#2",
+          "source": "设备操作规程-真空高压气淬炉.md#一、适用范围与人员要求",
+          "score": 0.6395,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#1",
+          "source": "设备操作规程-真空高压气淬炉.md#文件信息",
+          "score": 0.6197,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#3",
+          "source": "设备操作规程-真空高压气淬炉.md#二、开炉前点检项目",
+          "score": 0.8212,
+          "passed": true,
+          "cited": true,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 1,
+      "image_in_context": true,
+      "top1_score": 0.6532,
+      "answer": "VQ-1200-01 在 10 月 21 日那一炉不能进行气淬。因为氮气压力不足，氮气储罐压力为 1.1 MPa，低于正常范围的 1.2 MPa，因此不能进行气淬，需要联系供气。",
+      "answer_hash": "0955838c6111",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"VQ-1200-01 在 10 月 21 日那一炉不能进行气淬。因为氮气压力不足，氮气储罐压力为 1.1 MPa，低于正常范围的 1.2 MPa，因此不能进行气淬，需要联系供气。\",\n  \"cited\": [1, 4]\n}",
+      "retrieve_s": 0.93,
+      "llm_s": 11.97,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        [
+          "不能",
+          "不得",
+          "不可",
+          "不行",
+          "不允许",
+          "禁止"
+        ],
+        "1.2"
+      ],
+      "expected_source": [
+        [
+          "P4-点检表-真空炉VQ1200-01-20261021.jpg#图片"
+        ],
+        [
+          "设备操作规程-真空高压气淬炉.md#二、开炉前点检项目"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1,
+        6
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "MB08",
+      "category": "mm_joint",
+      "split": "test",
+      "origin": "mm",
+      "question": "VMC850 数控铣床部件示意图中 5 号部件报警了，还能继续加工吗？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "设备故障处理手册-数控铣床.md#8",
+          "source": "设备故障处理手册-数控铣床.md#五、常见报警代码",
+          "score": 0.6895,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "P2-点检表-铣床VMC850-05-20260715.jpg#1",
+          "source": "P2-点检表-铣床VMC850-05-20260715.jpg#图片",
+          "score": 0.6826,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "S1-铣床结构示意图-VMC850.png#1",
+          "source": "S1-铣床结构示意图-VMC850.png#图片",
+          "score": 0.6797,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.814,
+          "passed": true,
+          "cited": true,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备故障处理手册-数控铣床.md#2",
+          "source": "设备故障处理手册-数控铣床.md#一、使用原则",
+          "score": 0.6988,
+          "passed": true,
+          "cited": true,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.6895,
+      "answer": "根据点检记录，主轴温度为 53°C，判定正常。5 号部件是主轴冷却机，没有在点检记录中提及异常情况。因此，5 号部件没有报警，可以继续加工。",
+      "answer_hash": "6877fbabb845",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"根据点检记录，主轴温度为 53°C，判定正常。5 号部件是主轴冷却机，没有在点检记录中提及异常情况。因此，5 号部件没有报警，可以继续加工。\",\n  \"cited\": [\n    1,\n    2,\n    3,\n    4,\n    5\n  ]\n}",
+      "retrieve_s": 1.46,
+      "llm_s": 10.9,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        [
+          "不能",
+          "不得",
+          "不可",
+          "不行",
+          "不允许",
+          "禁止"
+        ],
+        "冷却机"
+      ],
+      "expected_source": [
+        [
+          "S1-铣床结构示意图-VMC850.png#图片"
+        ],
+        [
+          "设备故障处理手册-数控铣床.md#二、主轴过热"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": false,
+      "expected_rank": [
+        3,
+        10
+      ],
+      "missing_keywords": [
+        [
+          "不能",
+          "不得",
+          "不可",
+          "不行",
+          "不允许",
+          "禁止"
+        ]
+      ],
+      "auto_correct": false,
+      "auto_outcome": "wrong_answer",
+      "review": {
+        "answer_hash": "6877fbabb845",
+        "verdict": "real_error",
+        "comment": "故障手册\"二、主轴过热\"没补进来，模型拿 P2 点检记录推出\"没有报警、可以继续加工\"",
+        "run": "eval_mm_images_link_3b_run2.json",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "MB09",
+      "category": "mm_joint",
+      "split": "test",
+      "origin": "mm",
+      "question": "真空高压气淬炉部件示意图中 2 号部件出现压痕，应该怎么处理？",
+      "answerable": true,
+      "top": [
+        {
+          "id": "S2-真空炉结构示意图-VQ1200.png#1",
+          "source": "S2-真空炉结构示意图-VQ1200.png#图片",
+          "score": 0.6531,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#3",
+          "source": "设备操作规程-真空高压气淬炉.md#二、开炉前点检项目",
+          "score": 0.6112,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#1",
+          "source": "设备操作规程-真空高压气淬炉.md#文件信息",
+          "score": 0.6084,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#4",
+          "source": "设备操作规程-真空高压气淬炉.md#三、操作步骤",
+          "score": 0.7591,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 1,
+      "image_in_context": true,
+      "top1_score": 0.6531,
+      "answer": "部件标号 2 是炉门密封圈，如果出现压痕，应该更换后方可开炉。",
+      "answer_hash": "25f9e672b746",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"部件标号 2 是炉门密封圈，如果出现压痕，应该更换后方可开炉。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 0.69,
+      "llm_s": 10.47,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "expected_keywords": [
+        "密封圈",
+        "更换"
+      ],
+      "expected_source": [
+        [
+          "S2-真空炉结构示意图-VQ1200.png#图片"
+        ],
+        [
+          "设备操作规程-真空高压气淬炉.md#二、开炉前点检项目"
+        ]
+      ],
+      "retrieval_hit": true,
+      "retrieval_hit_all": true,
+      "expected_rank": [
+        1,
+        2
+      ],
+      "missing_keywords": [],
+      "auto_correct": true,
+      "auto_outcome": "correct",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "MC01",
+      "category": "mm_negative",
+      "split": "test",
+      "origin": "mm",
+      "question": "10 月 22 日 VMC850-03 夜班点检的主轴温度是多少？",
+      "answerable": false,
+      "top": [
+        {
+          "id": "P1-点检表-铣床VMC850-03-20261022.jpg#1",
+          "source": "P1-点检表-铣床VMC850-03-20261022.jpg#图片",
+          "score": 0.7478,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P2-点检表-铣床VMC850-05-20260715.jpg#1",
+          "source": "P2-点检表-铣床VMC850-05-20260715.jpg#图片",
+          "score": 0.7393,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.6254,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#2",
+          "source": "设备点检规范.md#一、目的与适用范围",
+          "score": 0.6892,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#5",
+          "source": "设备点检规范.md#四、平面磨床日点检项目",
+          "score": 0.6713,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.7478,
+      "answer": "10 月 22 日 VMC850-03 夜班点检的主轴温度是 62 °C。",
+      "answer_hash": "7671a98ea113",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"10 月 22 日 VMC850-03 夜班点检的主轴温度是 62 °C。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 1.55,
+      "llm_s": 11.81,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "auto_correct": false,
+      "auto_outcome": "hallucination",
+      "review": {
+        "answer_hash": "7671a98ea113",
+        "verdict": "real_error",
+        "comment": "幻觉：把白班那张表的 62℃ 说成夜班的；只加图片（不关联）时两次都正确拒答",
+        "run": "eval_mm_images_link_3b.json",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "MC02",
+      "category": "mm_negative",
+      "split": "test",
+      "origin": "mm",
+      "question": "VMC850-03 在 10 月 23 日点检时气源压力是多少？",
+      "answerable": false,
+      "top": [
+        {
+          "id": "P1-点检表-铣床VMC850-03-20261022.jpg#1",
+          "source": "P1-点检表-铣床VMC850-03-20261022.jpg#图片",
+          "score": 0.653,
+          "passed": true,
+          "cited": true,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P2-点检表-铣床VMC850-05-20260715.jpg#1",
+          "source": "P2-点检表-铣床VMC850-05-20260715.jpg#图片",
+          "score": 0.6388,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P4-点检表-真空炉VQ1200-01-20261021.jpg#1",
+          "source": "P4-点检表-真空炉VQ1200-01-20261021.jpg#图片",
+          "score": 0.599,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.7768,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#5",
+          "source": "设备点检规范.md#四、平面磨床日点检项目",
+          "score": 0.6832,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.653,
+      "answer": "VMC850-03 在 10 月 23 日点检时气源压力是 0.45 MPa。",
+      "answer_hash": "b3a2a1a356fa",
+      "fallback": false,
+      "reason": "ok",
+      "layer": null,
+      "raw_llm_output": "{\n  \"answerable\": true,\n  \"answer\": \"VMC850-03 在 10 月 23 日点检时气源压力是 0.45 MPa。\",\n  \"cited\": [1]\n}",
+      "retrieve_s": 1.52,
+      "llm_s": 14.66,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "auto_correct": false,
+      "auto_outcome": "hallucination",
+      "review": {
+        "answer_hash": "b3a2a1a356fa",
+        "verdict": "real_error",
+        "comment": "幻觉：把 10 月 22 日的 0.45 MPa 说成 10 月 23 日的",
+        "run": "eval_mm_images_3b.json",
+        "stale": false
+      },
+      "final_correct": false
+    },
+    {
+      "id": "MC03",
+      "category": "mm_negative",
+      "split": "test",
+      "origin": "mm",
+      "question": "M7150 平面磨床的砂轮直径是多少？",
+      "answerable": false,
+      "top": [
+        {
+          "id": "S3-平面磨床结构示意图-M7150.png#1",
+          "source": "S3-平面磨床结构示意图-M7150.png#图片",
+          "score": 0.7023,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "P3-点检表-磨床M7150-02-20261020.jpg#1",
+          "source": "P3-点检表-磨床M7150-02-20261020.jpg#图片",
+          "score": 0.6378,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备点检规范.md#2",
+          "source": "设备点检规范.md#一、目的与适用范围",
+          "score": 0.5551,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#5",
+          "source": "设备点检规范.md#四、平面磨床日点检项目",
+          "score": 0.6713,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.6833,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.7023,
+      "answer": "资料中没有找到相关内容，建议咨询相关部门负责人",
+      "answer_hash": "25461403ce78",
+      "fallback": true,
+      "reason": "model_not_answerable",
+      "layer": 2,
+      "raw_llm_output": "{\n  \"answerable\": false,\n  \"answer\": \"\",\n  \"cited\": [\n    3\n  ]\n}",
+      "retrieve_s": 1.32,
+      "llm_s": 13.34,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "auto_correct": true,
+      "auto_outcome": "correct_refusal",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "MC04",
+      "category": "mm_negative",
+      "split": "test",
+      "origin": "mm",
+      "question": "真空高压气淬炉示意图里的罗茨泵是什么品牌的？",
+      "answerable": false,
+      "top": [
+        {
+          "id": "S2-真空炉结构示意图-VQ1200.png#1",
+          "source": "S2-真空炉结构示意图-VQ1200.png#图片",
+          "score": 0.616,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#1",
+          "source": "设备操作规程-真空高压气淬炉.md#文件信息",
+          "score": 0.5159,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "P4-点检表-真空炉VQ1200-01-20261021.jpg#1",
+          "source": "P4-点检表-真空炉VQ1200-01-20261021.jpg#图片",
+          "score": 0.5127,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#4",
+          "source": "设备操作规程-真空高压气淬炉.md#三、操作步骤",
+          "score": 0.7036,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#3",
+          "source": "设备操作规程-真空高压气淬炉.md#二、开炉前点检项目",
+          "score": 0.822,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.616,
+      "answer": "资料中没有找到相关内容，建议咨询相关部门负责人",
+      "answer_hash": "25461403ce78",
+      "fallback": true,
+      "reason": "model_not_answerable",
+      "layer": 2,
+      "raw_llm_output": "{\n  \"answerable\": false,\n  \"answer\": \"\",\n  \"cited\": [\n    1\n  ]\n}",
+      "retrieve_s": 1.43,
+      "llm_s": 13.51,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "auto_correct": true,
+      "auto_outcome": "correct_refusal",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "MC05",
+      "category": "mm_negative",
+      "split": "test",
+      "origin": "mm",
+      "question": "VMC850 数控铣床的刀库最多能装多重的刀具？",
+      "answerable": false,
+      "top": [
+        {
+          "id": "S1-铣床结构示意图-VMC850.png#1",
+          "source": "S1-铣床结构示意图-VMC850.png#图片",
+          "score": 0.6874,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备故障处理手册-数控铣床.md#1",
+          "source": "设备故障处理手册-数控铣床.md#文件信息",
+          "score": 0.6251,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "P1-点检表-铣床VMC850-03-20261022.jpg#1",
+          "source": "P1-点检表-铣床VMC850-03-20261022.jpg#图片",
+          "score": 0.5787,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备故障处理手册-数控铣床.md#7",
+          "source": "设备故障处理手册-数控铣床.md#四、自动换刀故障",
+          "score": 0.6825,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备点检规范.md#4",
+          "source": "设备点检规范.md#三、数控铣床日点检项目",
+          "score": 0.8089,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.6874,
+      "answer": "资料中没有找到相关内容，建议咨询相关部门负责人",
+      "answer_hash": "25461403ce78",
+      "fallback": true,
+      "reason": "model_not_answerable",
+      "layer": 2,
+      "raw_llm_output": "{\n  \"answerable\": false,\n  \"answer\": \"\",\n  \"cited\": [\n    2,\n    1\n  ]\n}",
+      "retrieve_s": 1.36,
+      "llm_s": 12.76,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "auto_correct": true,
+      "auto_outcome": "correct_refusal",
+      "review": null,
+      "final_correct": true
+    },
+    {
+      "id": "MC06",
+      "category": "mm_negative",
+      "split": "test",
+      "origin": "mm",
+      "question": "VQ-1200-01 开炉前点检时冷却水流量是多少？",
+      "answerable": false,
+      "top": [
+        {
+          "id": "P4-点检表-真空炉VQ1200-01-20261021.jpg#1",
+          "source": "P4-点检表-真空炉VQ1200-01-20261021.jpg#图片",
+          "score": 0.7556,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#3",
+          "source": "设备操作规程-真空高压气淬炉.md#二、开炉前点检项目",
+          "score": 0.69,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "text"
+        },
+        {
+          "id": "S2-真空炉结构示意图-VQ1200.png#1",
+          "source": "S2-真空炉结构示意图-VQ1200.png#图片",
+          "score": 0.6309,
+          "passed": true,
+          "cited": false,
+          "linked": false,
+          "type": "image"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#2",
+          "source": "设备操作规程-真空高压气淬炉.md#一、适用范围与人员要求",
+          "score": 0.7299,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        },
+        {
+          "id": "设备操作规程-真空高压气淬炉.md#4",
+          "source": "设备操作规程-真空高压气淬炉.md#三、操作步骤",
+          "score": 0.7872,
+          "passed": true,
+          "cited": false,
+          "linked": true,
+          "type": "text"
+        }
+      ],
+      "n_linked": 2,
+      "image_in_context": true,
+      "top1_score": 0.7556,
+      "answer": "资料中没有找到相关内容，建议咨询相关部门负责人",
+      "answer_hash": "25461403ce78",
+      "fallback": true,
+      "reason": "model_not_answerable",
+      "layer": 2,
+      "raw_llm_output": "{\n  \"answerable\": false,\n  \"answer\": \"\",\n  \"cited\": [\n    1\n  ]\n}",
+      "retrieve_s": 1.45,
+      "llm_s": 13.09,
+      "called_llm": true,
+      "top3_same_section_dup": false,
+      "auto_correct": true,
+      "auto_outcome": "correct_refusal",
+      "review": null,
+      "final_correct": true
+    }
+  ]
+}

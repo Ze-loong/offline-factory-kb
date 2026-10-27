@@ -1,0 +1,437 @@
+{
+  "reviewer_note": "逐条复核：对照真值表、图片描述和资料原文",
+  "reviews": {
+    "MB01": [
+      {
+        "answer_hash": "f28327ac400b",
+        "verdict": "false_pass",
+        "comment": "只检索文字时没有点检记录，回答\"主轴温度正常\"是错的（实测 62℃）；关键词 60 / 停机 / 设备员来自规范原文",
+        "run": "eval_mm_text_only_3b.json"
+      },
+      {
+        "answer_hash": "480ad785b280",
+        "verdict": "false_pass",
+        "comment": "只检索文字时没有点检记录，回答\"主轴温度正常\"是错的（实测 62℃）；关键词 60 / 停机 / 设备员来自规范原文",
+        "run": "eval_mm_text_only_3b_run2.json"
+      },
+      {
+        "answer_hash": "25922ff3ba61",
+        "verdict": "pass_note",
+        "comment": "结论和处理（超过 60℃ 立即停机）正确，但把识别错的\"已报到王组长\"也写进了回答",
+        "run": "eval_mm_images_3b.json"
+      },
+      {
+        "answer_hash": "25922ff3ba61",
+        "verdict": "pass_note",
+        "comment": "结论和处理（超过 60℃ 立即停机）正确，但把识别错的\"已报到王组长\"也写进了回答",
+        "run": "eval_mm_images_3b_run2.json"
+      },
+      {
+        "answer_hash": "fc5b524a3927",
+        "verdict": "pass_note",
+        "comment": "结论和处理（超过 60℃ 立即停机）正确，但把识别错的\"已报到王组长\"也写进了回答",
+        "run": "eval_mm_images_link_3b.json"
+      },
+      {
+        "answer_hash": "9de75e5d780e",
+        "verdict": "real_error",
+        "comment": "判定异常但没说超过 60℃ 要立即停机，处理只写了\"报到王组长\"（识别错误被原样搬进回答）",
+        "run": "eval_mm_images_link_3b_run2.json"
+      }
+    ],
+    "MB02": [
+      {
+        "answer_hash": "555c1672d626",
+        "verdict": "false_pass",
+        "comment": "回答\"判定是正确的\"（实际 0.45 MPa 判正常是错的），还编出\"当时气源压力为 0.5 MPa\"；\"不能换刀\"是碰巧",
+        "run": "eval_mm_text_only_3b_run2.json"
+      },
+      {
+        "answer_hash": "bffc40aadf96",
+        "verdict": "false_pass",
+        "comment": "\"不能启动换刀\"对，但同时说\"0.45 MPa 判定为正常是正确的\"——前后矛盾，问题第一问答错",
+        "run": "eval_mm_images_link_3b.json"
+      },
+      {
+        "answer_hash": "3c795fe8d5cc",
+        "verdict": "false_pass",
+        "comment": "\"不能启动换刀\"对，但同时说\"0.45 MPa 判定为正常是正确的\"——前后矛盾，问题第一问答错",
+        "run": "eval_mm_images_link_3b_run2.json"
+      },
+      {
+        "answer_hash": "672d1582c053",
+        "verdict": "real_error",
+        "comment": "对照组：只检索文字，库里没有图片信息，答不出或答成规范里的通用内容",
+        "run": "eval_mm_text_only_3b.json"
+      },
+      {
+        "answer_hash": "ba770eb91441",
+        "verdict": "real_error",
+        "comment": "规范第三节不在上下文，照搬表上的\"判定正常\"，答\"能启动换刀\"",
+        "run": "eval_mm_images_3b.json"
+      },
+      {
+        "answer_hash": "abf77eb98ee4",
+        "verdict": "real_error",
+        "comment": "规范第三节不在上下文，照搬表上的\"判定正常\"，答\"能启动换刀\"",
+        "run": "eval_mm_images_3b_run2.json"
+      }
+    ],
+    "MB03": [
+      {
+        "answer_hash": "067bd24ada13",
+        "verdict": "false_pass",
+        "comment": "没有点检记录，回答成\"如果符合范围则符合规范\"的条件句，没有回答问题；关键词\"超过\"来自\"不超过 55℃\"",
+        "run": "eval_mm_text_only_3b.json"
+      },
+      {
+        "answer_hash": "133163ec8afd",
+        "verdict": "false_pass",
+        "comment": "没有点检记录，回答成\"如果符合范围则符合规范\"的条件句，没有回答问题；关键词\"超过\"来自\"不超过 55℃\"",
+        "run": "eval_mm_text_only_3b_run2.json"
+      },
+      {
+        "answer_hash": "b3a22546ef9a",
+        "verdict": "false_pass",
+        "comment": "用了另一张表（VMC850-03）的 62℃，结论\"不符合\"碰巧对；7 月 15 日 VMC850-05 实测 53℃",
+        "run": "eval_mm_images_3b.json"
+      },
+      {
+        "answer_hash": "ea71651a05c0",
+        "verdict": "false_pass",
+        "comment": "用了另一张表（VMC850-03）的 62℃，结论\"不符合\"碰巧对；7 月 15 日 VMC850-05 实测 53℃",
+        "run": "eval_mm_images_3b_run2.json"
+      },
+      {
+        "answer_hash": "d25a8651c6d8",
+        "verdict": "false_pass",
+        "comment": "读到了 53℃、环境 36℃，但算成\"正常范围 51～71℃，符合\"，结论错误（上限是 51℃）；关键词\"超过\"来自\"不超过 55℃\"",
+        "run": "eval_mm_images_link_3b.json"
+      },
+      {
+        "answer_hash": "55ec85052a53",
+        "verdict": "false_pass",
+        "comment": "读到了 53℃、环境 36℃，但算成\"正常范围 51～71℃，符合\"，结论错误（上限是 51℃）；关键词\"超过\"来自\"不超过 55℃\"",
+        "run": "eval_mm_images_link_3b_run2.json"
+      }
+    ],
+    "MA06": [
+      {
+        "answer_hash": "f5908772a21d",
+        "verdict": "scoring_error",
+        "comment": "数值 4 正确；单位 Pa 在视觉识别第一遍就丢了（描述里只有\"4\"），回答如实转述",
+        "run": "eval_mm_images_3b.json"
+      },
+      {
+        "answer_hash": "f5908772a21d",
+        "verdict": "scoring_error",
+        "comment": "数值 4 正确；单位 Pa 在视觉识别第一遍就丢了（描述里只有\"4\"），回答如实转述",
+        "run": "eval_mm_images_3b_run2.json"
+      },
+      {
+        "answer_hash": "8dde0a10d087",
+        "verdict": "scoring_error",
+        "comment": "数值 4 正确；单位 Pa 在视觉识别第一遍就丢了（描述里只有\"4\"），回答如实转述",
+        "run": "eval_mm_images_link_3b_run2.json"
+      },
+      {
+        "answer_hash": "2438ce70e9f5",
+        "verdict": "real_error",
+        "comment": "答成规范里的\"≤ 5 Pa\"，没答实测值 4",
+        "run": "eval_mm_images_link_3b.json"
+      },
+      {
+        "answer_hash": "27d9f771aead",
+        "verdict": "real_error",
+        "comment": "对照组：只检索文字，库里没有图片信息，答不出或答成规范里的通用内容",
+        "run": "eval_mm_text_only_3b.json"
+      }
+    ],
+    "MA03": [
+      {
+        "answer_hash": "42e080be6f61",
+        "verdict": "real_error",
+        "comment": "上下文里写的是\"8 罗茨泵\"，3b 答成 9 号——生成错误，不是识别错误",
+        "run": "eval_mm_images_3b.json"
+      },
+      {
+        "answer_hash": "42e080be6f61",
+        "verdict": "real_error",
+        "comment": "上下文里写的是\"8 罗茨泵\"，3b 答成 9 号——生成错误，不是识别错误",
+        "run": "eval_mm_images_3b_run2.json"
+      },
+      {
+        "answer_hash": "42e080be6f61",
+        "verdict": "real_error",
+        "comment": "上下文里写的是\"8 罗茨泵\"，3b 答成 9 号——生成错误，不是识别错误",
+        "run": "eval_mm_images_link_3b.json"
+      },
+      {
+        "answer_hash": "42e080be6f61",
+        "verdict": "real_error",
+        "comment": "上下文里写的是\"8 罗茨泵\"，3b 答成 9 号——生成错误，不是识别错误",
+        "run": "eval_mm_images_link_3b_run2.json"
+      },
+      {
+        "answer_hash": "25461403ce78",
+        "verdict": "real_error",
+        "comment": "对照组：只检索文字，库里没有图片信息，答不出或答成规范里的通用内容",
+        "run": "eval_mm_text_only_3b.json"
+      }
+    ],
+    "MA07": [
+      {
+        "answer_hash": "fa13835357a5",
+        "verdict": "real_error",
+        "comment": "答成 6 号（S3 里 6 是工作台）；只加图片时两次都答对 5 号，关联补充多进了 2 个片段、上下文里还有 S1 的部件清单，模型混了",
+        "run": "eval_mm_images_link_3b.json"
+      },
+      {
+        "answer_hash": "fa13835357a5",
+        "verdict": "real_error",
+        "comment": "答成 6 号（S3 里 6 是工作台）；只加图片时两次都答对 5 号，关联补充多进了 2 个片段、上下文里还有 S1 的部件清单，模型混了",
+        "run": "eval_mm_images_link_3b_run2.json"
+      },
+      {
+        "answer_hash": "25461403ce78",
+        "verdict": "real_error",
+        "comment": "对照组：只检索文字，库里没有图片信息，答不出或答成规范里的通用内容",
+        "run": "eval_mm_text_only_3b.json"
+      }
+    ],
+    "MA04": [
+      {
+        "answer_hash": "25461403ce78",
+        "verdict": "real_error",
+        "comment": "误拒：P3 片段在上下文里（top1），模型判答不了；I2 同配置答对",
+        "run": "eval_mm_images_3b.json"
+      },
+      {
+        "answer_hash": "aa5888d31e4d",
+        "verdict": "real_error",
+        "comment": "对照组：只检索文字，库里没有图片信息，答不出或答成规范里的通用内容",
+        "run": "eval_mm_text_only_3b.json"
+      }
+    ],
+    "MB04": [
+      {
+        "answer_hash": "4233939fd951",
+        "verdict": "real_error",
+        "comment": "故障手册\"三、主轴异响与振动\"始终没进上下文（关联补进的是点检规范）；回答里的\"润滑不良、轴承磨损\"接近原文，但来自常识，不算答对",
+        "run": "eval_mm_images_3b.json"
+      },
+      {
+        "answer_hash": "64b061017716",
+        "verdict": "real_error",
+        "comment": "故障手册\"三、主轴异响与振动\"始终没进上下文（关联补进的是点检规范）；回答里的\"润滑不良、轴承磨损\"接近原文，但来自常识，不算答对",
+        "run": "eval_mm_images_3b_run2.json"
+      },
+      {
+        "answer_hash": "d1f7c7738764",
+        "verdict": "real_error",
+        "comment": "故障手册\"三、主轴异响与振动\"始终没进上下文（关联补进的是点检规范）；回答里的\"润滑不良、轴承磨损\"接近原文，但来自常识，不算答对",
+        "run": "eval_mm_images_link_3b.json"
+      },
+      {
+        "answer_hash": "9a52e4889adf",
+        "verdict": "real_error",
+        "comment": "故障手册\"三、主轴异响与振动\"始终没进上下文（关联补进的是点检规范）；回答里的\"润滑不良、轴承磨损\"接近原文，但来自常识，不算答对",
+        "run": "eval_mm_images_link_3b_run2.json"
+      },
+      {
+        "answer_hash": "25461403ce78",
+        "verdict": "real_error",
+        "comment": "对照组：只检索文字，库里没有图片信息，答不出或答成规范里的通用内容",
+        "run": "eval_mm_text_only_3b.json"
+      }
+    ],
+    "MB05": [
+      {
+        "answer_hash": "64fe6398c6ec",
+        "verdict": "real_error",
+        "comment": "规范第四节不在上下文，没答出 46#，也没说约 1/2",
+        "run": "eval_mm_images_3b.json"
+      },
+      {
+        "answer_hash": "64fe6398c6ec",
+        "verdict": "real_error",
+        "comment": "规范第四节不在上下文，没答出 46#，也没说约 1/2",
+        "run": "eval_mm_images_3b_run2.json"
+      },
+      {
+        "answer_hash": "92f3675993d1",
+        "verdict": "real_error",
+        "comment": "46# 对，但把油位说成\"低于下刻线\"（混进了 P1 铣床的润滑油位）",
+        "run": "eval_mm_images_link_3b.json"
+      },
+      {
+        "answer_hash": "5137b1944fc9",
+        "verdict": "acceptable",
+        "comment": "\"液压油位偏低，补加 46# 抗磨液压油\"——问题和处理都对，只是没说出\"约 1/2\"",
+        "run": "eval_mm_images_link_3b_run2.json"
+      },
+      {
+        "answer_hash": "25461403ce78",
+        "verdict": "real_error",
+        "comment": "对照组：只检索文字，库里没有图片信息，答不出或答成规范里的通用内容",
+        "run": "eval_mm_text_only_3b.json"
+      }
+    ],
+    "MB06": [
+      {
+        "answer_hash": "5cc3710241f9",
+        "verdict": "real_error",
+        "comment": "规范不在上下文，照搬表上的\"判定正常\"",
+        "run": "eval_mm_images_3b.json"
+      },
+      {
+        "answer_hash": "5cc3710241f9",
+        "verdict": "real_error",
+        "comment": "规范不在上下文，照搬表上的\"判定正常\"",
+        "run": "eval_mm_images_3b_run2.json"
+      },
+      {
+        "answer_hash": "cfab96d84350",
+        "verdict": "real_error",
+        "comment": "2.5% 和 3%～5% 都在回答里，却得出\"合格\"——3b 数值比较出错",
+        "run": "eval_mm_images_link_3b.json"
+      },
+      {
+        "answer_hash": "a40f50326dcd",
+        "verdict": "real_error",
+        "comment": "2.5% 和 3%～5% 都在回答里，却得出\"合格\"——3b 数值比较出错",
+        "run": "eval_mm_images_link_3b_run2.json"
+      },
+      {
+        "answer_hash": "25461403ce78",
+        "verdict": "real_error",
+        "comment": "对照组：只检索文字，库里没有图片信息，答不出或答成规范里的通用内容",
+        "run": "eval_mm_text_only_3b.json"
+      }
+    ],
+    "MB07": [
+      {
+        "answer_hash": "49518f02b2c9",
+        "verdict": "real_error",
+        "comment": "结论\"不能气淬\"对，但只依据表上的\"判定异常\"，规程第二节（1.2 MPa）不在上下文",
+        "run": "eval_mm_images_3b.json"
+      },
+      {
+        "answer_hash": "911aa9e848ea",
+        "verdict": "real_error",
+        "comment": "结论\"不能气淬\"对，但只依据表上的\"判定异常\"，规程第二节（1.2 MPa）不在上下文",
+        "run": "eval_mm_images_3b_run2.json"
+      },
+      {
+        "answer_hash": "25461403ce78",
+        "verdict": "real_error",
+        "comment": "对照组：只检索文字，库里没有图片信息，答不出或答成规范里的通用内容",
+        "run": "eval_mm_text_only_3b.json"
+      }
+    ],
+    "MB08": [
+      {
+        "answer_hash": "2ce364305b47",
+        "verdict": "real_error",
+        "comment": "故障手册\"二、主轴过热\"没补进来，模型拿 P2 点检记录推出\"没有报警、可以继续加工\"",
+        "run": "eval_mm_images_link_3b.json"
+      },
+      {
+        "answer_hash": "6877fbabb845",
+        "verdict": "real_error",
+        "comment": "故障手册\"二、主轴过热\"没补进来，模型拿 P2 点检记录推出\"没有报警、可以继续加工\"",
+        "run": "eval_mm_images_link_3b_run2.json"
+      },
+      {
+        "answer_hash": "25461403ce78",
+        "verdict": "real_error",
+        "comment": "对照组：只检索文字，库里没有图片信息，答不出或答成规范里的通用内容",
+        "run": "eval_mm_text_only_3b.json"
+      }
+    ],
+    "MC01": [
+      {
+        "answer_hash": "985e2e378647",
+        "verdict": "real_error",
+        "comment": "把规范里的正常范围当成夜班点检结果回答（答非所问的幻觉）",
+        "run": "eval_mm_text_only_3b.json"
+      },
+      {
+        "answer_hash": "985e2e378647",
+        "verdict": "real_error",
+        "comment": "把规范里的正常范围当成夜班点检结果回答（答非所问的幻觉）",
+        "run": "eval_mm_text_only_3b_run2.json"
+      },
+      {
+        "answer_hash": "7671a98ea113",
+        "verdict": "real_error",
+        "comment": "幻觉：把白班那张表的 62℃ 说成夜班的；只加图片（不关联）时两次都正确拒答",
+        "run": "eval_mm_images_link_3b.json"
+      },
+      {
+        "answer_hash": "7671a98ea113",
+        "verdict": "real_error",
+        "comment": "幻觉：把白班那张表的 62℃ 说成夜班的；只加图片（不关联）时两次都正确拒答",
+        "run": "eval_mm_images_link_3b_run2.json"
+      }
+    ],
+    "MC02": [
+      {
+        "answer_hash": "b3a2a1a356fa",
+        "verdict": "real_error",
+        "comment": "幻觉：把 10 月 22 日的 0.45 MPa 说成 10 月 23 日的",
+        "run": "eval_mm_images_3b.json"
+      },
+      {
+        "answer_hash": "b3a2a1a356fa",
+        "verdict": "real_error",
+        "comment": "幻觉：把 10 月 22 日的 0.45 MPa 说成 10 月 23 日的",
+        "run": "eval_mm_images_3b_run2.json"
+      },
+      {
+        "answer_hash": "b3a2a1a356fa",
+        "verdict": "real_error",
+        "comment": "幻觉：把 10 月 22 日的 0.45 MPa 说成 10 月 23 日的",
+        "run": "eval_mm_images_link_3b.json"
+      },
+      {
+        "answer_hash": "b3a2a1a356fa",
+        "verdict": "real_error",
+        "comment": "幻觉：把 10 月 22 日的 0.45 MPa 说成 10 月 23 日的",
+        "run": "eval_mm_images_link_3b_run2.json"
+      }
+    ],
+    "MA01": [
+      {
+        "answer_hash": "a3886b60e0be",
+        "verdict": "real_error",
+        "comment": "对照组：只检索文字，库里没有图片信息，答不出或答成规范里的通用内容",
+        "run": "eval_mm_text_only_3b.json"
+      }
+    ],
+    "MA02": [
+      {
+        "answer_hash": "25461403ce78",
+        "verdict": "real_error",
+        "comment": "对照组：只检索文字，库里没有图片信息，答不出或答成规范里的通用内容",
+        "run": "eval_mm_text_only_3b.json"
+      }
+    ],
+    "MA05": [
+      {
+        "answer_hash": "3fc3a40d8388",
+        "verdict": "real_error",
+        "comment": "对照组：只检索文字，库里没有图片信息，答不出或答成规范里的通用内容",
+        "run": "eval_mm_text_only_3b.json"
+      }
+    ],
+    "MB09": [
+      {
+        "answer_hash": "25461403ce78",
+        "verdict": "real_error",
+        "comment": "对照组：只检索文字，库里没有图片信息，答不出或答成规范里的通用内容",
+        "run": "eval_mm_text_only_3b.json"
+      }
+    ]
+  }
+}

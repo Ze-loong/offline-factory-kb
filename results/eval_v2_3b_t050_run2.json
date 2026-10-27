@@ -1,4 +1,11 @@
 {
+  "name": "eval_v2",
+  "use_images": null,
+  "link": null,
+  "link_max": 2,
+  "review_files": [
+    "tests/review_v2_3b.json"
+  ],
   "model": "qwen2.5:3b",
   "threshold": 0.5,
   "top_k": 3,
@@ -143,7 +150,9 @@
           "p90": 9.46,
           "n": 74
         },
-        "top3_same_section_dup": 12
+        "top3_same_section_dup": 12,
+        "image_in_context": 0,
+        "with_linked": 0
       }
     },
     "test": {
@@ -284,7 +293,9 @@
           "p90": 9.37,
           "n": 61
         },
-        "top3_same_section_dup": 11
+        "top3_same_section_dup": 11,
+        "image_in_context": 0,
+        "with_linked": 0
       }
     }
   },
@@ -850,14 +861,7 @@
       "missing_keywords": [],
       "auto_correct": true,
       "auto_outcome": "correct",
-      "review": {
-        "verdict": "real_error",
-        "comment": "阈值造成的误拒：top1 0.547 < 0.55，第 1 层直接拦下，没有调用模型",
-        "answer_hash": "25461403ce78",
-        "first_seen_in": "eval_v2_3b_t055.json",
-        "date": "2026-10-20",
-        "stale": true
-      },
+      "review": null,
       "final_correct": true
     },
     {
@@ -1295,14 +1299,7 @@
       "missing_keywords": [],
       "auto_correct": true,
       "auto_outcome": "correct",
-      "review": {
-        "verdict": "real_error",
-        "comment": "阈值造成的误拒：top1 0.528 < 0.55，第 1 层直接拦下",
-        "answer_hash": "25461403ce78",
-        "first_seen_in": "eval_v2_3b_t055.json",
-        "date": "2026-10-20",
-        "stale": true
-      },
+      "review": null,
       "final_correct": true
     },
     {
@@ -1522,13 +1519,7 @@
       "top3_same_section_dup": false,
       "auto_correct": true,
       "auto_outcome": "correct_refusal",
-      "review": {
-        "verdict": "real_error",
-        "comment": "幻觉：'劳保鞋需要由经过培训的人员进行更换，具体由班组长负责'——把磨床'更换砂轮须由经过培训的人员进行'张冠李戴到劳保鞋",
-        "answer_hash": "671a579fa5c4",
-        "date": "2026-10-20",
-        "stale": true
-      },
+      "review": null,
       "final_correct": true
     },
     {
@@ -2738,14 +2729,7 @@
       "missing_keywords": [],
       "auto_correct": true,
       "auto_outcome": "correct",
-      "review": {
-        "verdict": "real_error",
-        "comment": "分档错误：油库旁 5 米属于一级动火（安全环保部经理审批），答成二级动火、车间主任。0.55 下上下文只剩 1 个片段（基线 3 个），基线答对；是否由阈值造成无法与随机波动区分",
-        "answer_hash": "d143157f35df",
-        "first_seen_in": "eval_v2_3b_t055.json",
-        "date": "2026-10-20",
-        "stale": true
-      },
+      "review": null,
       "final_correct": true
     },
     {
@@ -4736,14 +4720,7 @@
       "top3_same_section_dup": false,
       "auto_correct": true,
       "auto_outcome": "correct_refusal",
-      "review": {
-        "verdict": "real_error",
-        "comment": "幻觉：编出'监护人不需要额外的资质'（资料没有规定监护人资质）。0.45 下第 3 个片段（0.4948）也进了上下文，但该片段与监护人无关，变化不能归因于阈值",
-        "answer_hash": "dc7eda071e04",
-        "first_seen_in": "eval_v2_3b_t045.json",
-        "date": "2026-10-20",
-        "stale": true
-      },
+      "review": null,
       "final_correct": true
     },
     {

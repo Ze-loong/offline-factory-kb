@@ -1,4 +1,11 @@
 {
+  "name": "eval_v2",
+  "use_images": null,
+  "link": null,
+  "link_max": 2,
+  "review_files": [
+    "tests/review_v2_3b.json"
+  ],
   "model": "qwen2.5:3b",
   "threshold": 0.55,
   "top_k": 3,
@@ -143,7 +150,9 @@
           "p90": 9.48,
           "n": 69
         },
-        "top3_same_section_dup": 12
+        "top3_same_section_dup": 12,
+        "image_in_context": 0,
+        "with_linked": 0
       }
     },
     "test": {
@@ -284,7 +293,9 @@
           "p90": 9.48,
           "n": 57
         },
-        "top3_same_section_dup": 11
+        "top3_same_section_dup": 11,
+        "image_in_context": 0,
+        "with_linked": 0
       }
     }
   },
@@ -1522,13 +1533,7 @@
       "top3_same_section_dup": false,
       "auto_correct": true,
       "auto_outcome": "correct_refusal",
-      "review": {
-        "verdict": "real_error",
-        "comment": "幻觉：'劳保鞋需要由经过培训的人员进行更换，具体由班组长负责'——把磨床'更换砂轮须由经过培训的人员进行'张冠李戴到劳保鞋",
-        "answer_hash": "671a579fa5c4",
-        "date": "2026-10-20",
-        "stale": true
-      },
+      "review": null,
       "final_correct": true
     },
     {
@@ -1574,14 +1579,7 @@
       "top3_same_section_dup": false,
       "auto_correct": true,
       "auto_outcome": "correct_refusal",
-      "review": {
-        "verdict": "acceptable",
-        "comment": "回答'夜班有考勤，但没有提到夜班有额外的补贴'——如实说明资料没提到，没有编造（同 V11 口径）",
-        "answer_hash": "078ce707dbc1",
-        "first_seen_in": "eval_v2_3b_t050_run2.json",
-        "date": "2026-10-20",
-        "stale": true
-      },
+      "review": null,
       "final_correct": true
     },
     {
@@ -4736,14 +4734,7 @@
       "top3_same_section_dup": false,
       "auto_correct": true,
       "auto_outcome": "correct_refusal",
-      "review": {
-        "verdict": "real_error",
-        "comment": "幻觉：编出'监护人不需要额外的资质'（资料没有规定监护人资质）。0.45 下第 3 个片段（0.4948）也进了上下文，但该片段与监护人无关，变化不能归因于阈值",
-        "answer_hash": "dc7eda071e04",
-        "first_seen_in": "eval_v2_3b_t045.json",
-        "date": "2026-10-20",
-        "stale": true
-      },
+      "review": null,
       "final_correct": true
     },
     {

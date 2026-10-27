@@ -1,0 +1,105 @@
+{
+  "image": "S2-真空炉结构示意图-VQ1200.png",
+  "image_sha256": "7551c9ccc38e629d42e4a51c890f2615a98f420bea9edc3fe7cabd584e71977b",
+  "model": "qwen3-vl:4b-instruct",
+  "prompt_version": "v3+tick1",
+  "options": {
+    "max_side": 1280,
+    "temperature": 0.1,
+    "num_ctx": 8192,
+    "num_predict": 2000
+  },
+  "created": "2026-10-26 07:34:39",
+  "orig_size": [
+    1260,
+    790
+  ],
+  "sent_size": [
+    1260,
+    790
+  ],
+  "timing": {
+    "wall_s": 82.38,
+    "load_s": 0.01,
+    "prompt_eval_s": 41.94,
+    "eval_s": 40.28
+  },
+  "prompt_tokens": 1527,
+  "output_tokens": 499,
+  "done_reason": "stop",
+  "json_ok": true,
+  "doc_refs": [
+    "HR-SB-021"
+  ],
+  "parsed": {
+    "image_type": "设备结构图",
+    "title": "恒锐模具钢有限公司 VQ-1200 真空高压气淬炉 主要部件示意图",
+    "visible_text": [
+      "恒锐模具钢有限公司 VQ-1200 真空高压气淬炉 主要部件示意图",
+      "图号：HR-SB-021-F1",
+      "配套文件：《真空高压气淬炉安全操作规程》HR-SB-021",
+      "注：示意图，非比例绘制。"
+    ],
+    "fields": [
+      {
+        "name": "1",
+        "value": "炉门"
+      },
+      {
+        "name": "2",
+        "value": "炉门密封圈"
+      },
+      {
+        "name": "3",
+        "value": "观察孔"
+      },
+      {
+        "name": "4",
+        "value": "热电偶"
+      },
+      {
+        "name": "5",
+        "value": "炉体（内为加热室）"
+      },
+      {
+        "name": "6",
+        "value": "气淬风机"
+      },
+      {
+        "name": "7",
+        "value": "机械泵"
+      },
+      {
+        "name": "8",
+        "value": "罗茨泵"
+      },
+      {
+        "name": "9",
+        "value": "真空计"
+      },
+      {
+        "name": "10",
+        "value": "氮气储罐（带压力表）"
+      },
+      {
+        "name": "11",
+        "value": "冷却水进水压力表"
+      },
+      {
+        "name": "12",
+        "value": "冷却水进水温度表"
+      },
+      {
+        "name": "13",
+        "value": "控制柜（控温仪表）"
+      }
+    ],
+    "doc_refs": [
+      "HR-SB-021-F1",
+      "HR-SB-021"
+    ],
+    "summary": "该图是恒锐模具钢有限公司VQ-1200真空高压气淬炉的主要部件示意图，标注了13个关键部件及其名称，用于设备结构说明和操作规程参考。"
+  },
+  "raw": "{\n  \"image_type\": \"设备结构图\",\n  \"title\": \"恒锐模具钢有限公司 VQ-1200 真空高压气淬炉 主要部件示意图\",\n  \"visible_text\": [\n    \"恒锐模具钢有限公司 VQ-1200 真空高压气淬炉 主要部件示意图\",\n    \"图号：HR-SB-021-F1\",\n    \"配套文件：《真空高压气淬炉安全操作规程》HR-SB-021\",\n    \"注：示意图，非比例绘制。\"\n  ],\n  \"fields\": [\n    {\n      \"name\": \"1\",\n      \"value\": \"炉门\"\n    },\n    {\n      \"name\": \"2\",\n      \"value\": \"炉门密封圈\"\n    },\n    {\n      \"name\": \"3\",\n      \"value\": \"观察孔\"\n    },\n    {\n      \"name\": \"4\",\n      \"value\": \"热电偶\"\n    },\n    {\n      \"name\": \"5\",\n      \"value\": \"炉体（内为加热室）\"\n    },\n    {\n      \"name\": \"6\",\n      \"value\": \"气淬风机\"\n    },\n    {\n      \"name\": \"7\",\n      \"value\": \"机械泵\"\n    },\n    {\n      \"name\": \"8\",\n      \"value\": \"罗茨泵\"\n    },\n    {\n      \"name\": \"9\",\n      \"value\": \"真空计\"\n    },\n    {\n      \"name\": \"10\",\n      \"value\": \"氮气储罐（带压力表）\"\n    },\n    {\n      \"name\": \"11\",\n      \"value\": \"冷却水进水压力表\"\n    },\n    {\n      \"name\": \"12\",\n      \"value\": \"冷却水进水温度表\"\n    },\n    {\n      \"name\": \"13\",\n      \"value\": \"控制柜（控温仪表）\"\n    }\n  ],\n  \"doc_refs\": [\n    \"HR-SB-021-F1\",\n    \"HR-SB-021\"\n  ],\n  \"summary\": \"该图是恒锐模具钢有限公司VQ-1200真空高压气淬炉的主要部件示意图，标注了13个关键部件及其名称，用于设备结构说明和操作规程参考。\"\n}",
+  "tick_check": null
+}

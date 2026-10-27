@@ -1,4 +1,11 @@
 {
+  "name": "eval_v2",
+  "use_images": null,
+  "link": null,
+  "link_max": 2,
+  "review_files": [
+    "tests/review_v2_7b.json"
+  ],
   "model": "qwen2.5:7b",
   "threshold": 0.5,
   "top_k": 3,
@@ -132,7 +139,9 @@
           "p90": 20.8,
           "n": 39
         },
-        "top3_same_section_dup": 4
+        "top3_same_section_dup": 4,
+        "image_in_context": 0,
+        "with_linked": 0
       }
     },
     "test": {
@@ -262,7 +271,9 @@
           "p90": 20.39,
           "n": 32
         },
-        "top3_same_section_dup": 4
+        "top3_same_section_dup": 4,
+        "image_in_context": 0,
+        "with_linked": 0
       }
     }
   },
