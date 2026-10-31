@@ -5,3 +5,6 @@ chroma_db/
 __pycache__/
 *.pyc
 .venv/
+
+# MCP Server 审计日志和自测输出（本机运行记录，不上传）
+logs/

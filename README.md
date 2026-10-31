@@ -156,6 +156,53 @@ python app.py                 # Windows 也可以直接双击 start.bat
 
 **原 82 题回归（加图片 + 关联，3b，2 次，复核后；来源 `results/eval_v3_3b*.json`）**：有答案 39/53 → **44/53**（两次相同），无答案 25/29（第二轮两次为 25 / 27），检索命中 51/53 → 52/53，模型耗时中位数 7.17 → 8.28 秒。**文字问答没有变差**，但 +5 题里真正能归因于图片的只有 1 题（磨床冷却液：关联把点检规范第四节补了进来）；图片片段只在 7/82 题进上下文，其余变化的题检索结果和第二轮相同，属于提示词多了一条规则后的生成波动（变对 4 题、变错 3 题，其中新增 1 题幻觉）。
 
+## 作为 MCP Server 使用（2026-10-31）
+
+`mcp_server/server.py` 用官方 Python MCP SDK（`mcp==1.29.0`，FastMCP）把检索和问答封装成 MCP Server，传输方式为 **stdio**，任何 MCP 客户端（如 Claude Code）都能把它当工具调用。**不改动原有代码**，直接导入 `rag.py`。
+
+| 名称 | 类型 | 作用 | 背后调用 |
+|---|---|---|---|
+| `search_kb` | Tool（只读） | 输入问题 → 返回 top 片段：来源文件、章节、文字 / 图片、相似度、是否过阈值、正文 | `rag.search()`，不调大模型 |
+| `ask_kb` | Tool（只读） | 输入问题（可选 3b / 7b）→ 回答 + 引用片段；资料里没有时 `fallback=true`，`reason` 说明被第几层拦下 | `rag.ask()`，三层把关 |
+| `kb://documents` | Resource | 资料清单：12 份文字资料的标题和文件编号、7 张图片文件名 | 只读 `docs/` 目录 |
+
+- **Tool Schema**：由函数签名 + 文档字符串自动生成；问题长度限制 1～500 字、模型只能选 `qwen2.5:3b` / `qwen2.5:7b`（JSON Schema 枚举），服务端再校验一次。
+- **审计日志**：每次工具调用往 `logs/audit.jsonl` 追加一行：时间、客户端名（来自握手信息）、工具、参数、状态、耗时、是否兜底、引用来源。被 Schema 拒绝的调用和资源读取目前**不记录**（见下方局限）。
+- **离线**：Server 不发起任何网络请求，只连本机 Ollama 和本地 Chroma。注意客户端是另一回事：Claude Code 本身要调用云端模型，所以"完全离线"指的是知识库这一侧；纯离线验证用下面的自测客户端。
+- **stdout 只放协议消息**：stdio 模式下 stdout 是 JSON-RPC 通道，导入 `rag`、调用 `rag` 时都把 stdout 临时重定向到 stderr；`rag` 是同步代码，放到线程里执行，不阻塞 Server 的事件循环。
+
+**1. 本机自测（不需要任何 AI 客户端）**
+
+```bash
+python mcp_server/test_client.py            # 或双击 mcp_server/selftest.bat
+python mcp_server/test_client.py --no-llm   # 只测检索，不调大模型
+```
+
+只用标准库手动走一遍 `initialize → notifications/initialized → tools/list → resources/list / read → tools/call`，打印每条 JSON-RPC 消息。实测（i9-12900H 纯 CPU，模型冷启动）：
+
+| 环节 | 结果 | 耗时 |
+|---|---|---|
+| initialize | 协议 2025-06-18 | 10.29 秒（含导入 chromadb 等库） |
+| tools/list | 2 个工具，Schema 含 `maxLength: 500`、模型枚举 | < 0.01 秒 |
+| resources/read | 12 份资料、7 张图 | 0.01 秒 |
+| search_kb 主轴温度 | top1 设备点检规范"三、数控铣床日点检项目"（0.77），3 片段都过阈值 | 2.23 秒（热状态 0.05～0.06 秒） |
+| 600 字超长问题 | `isError: true`（参数校验失败），Server 不崩 | < 0.01 秒 |
+| ask_kb 主轴温度 | 正确回答，引用点检规范第三节 | 16.10 秒（热状态 2～3 秒） |
+| ask_kb 主轴电机功率 | `fallback: true`，第 2 层（模型判断答不了） | 15.14 秒 |
+
+**2. 在 Claude Code 中注册**（路径换成自己的 Python 和本项目位置）
+
+```powershell
+claude mcp add offline-kb -s user -- "<venv>\Scripts\python.exe" "<项目>\mcp_server\server.py"
+claude mcp list        # offline-kb ... √ Connected
+```
+
+新开会话后即可调用。实测：问"数控铣床主轴温度正常范围"→ 调 `ask_kb`，回答带来源；问"主轴电机功率"→ `ask_kb` 第 2 层兜底，回答"资料中没有找到"；审计日志里客户端名为 `claude-code`。资源需要主动引用：输入 `@offline-kb:kb://documents 知识库里都有哪些资料？`，会读取资源并列出全部 12 份资料 + 7 张图。不加 `@` 时模型不会自己去读资源，而是编关键词调 `search_kb` 去猜（Tool 由模型决定调用，Resource 由客户端 / 用户决定读取）。
+
+![在 Claude Code 中调用 offline-kb](screenshots/08-MCP.png)
+
+![用 @ 引用 kb://documents 资源](screenshots/09-MCP-资源引用.png)
+
 ## 断网是怎么保证的
 
 | 可能联网的地方 | 处理 |
@@ -165,6 +212,7 @@ python app.py                 # Windows 也可以直接双击 start.bat
 | Chroma / Gradio 使用统计 | `anonymized_telemetry=False`、`GRADIO_ANALYTICS_ENABLED=False` |
 | Gradio 字体 | Gradio 6 默认字体打包在本地；中文用系统自带微软雅黑 |
 | 系统代理 | Ollama 客户端 `trust_env=False`，直连 127.0.0.1，不经过代理 |
+| MCP Server | stdio 传输（客户端拉起的子进程，走管道，不开网络端口）；Server 只调本机 Ollama 和本地 Chroma |
 
 断网实测（关 Wi-Fi → 重启 Ollama 和 app）：两轮实测都通过，见 `screenshots/` 和 `开发与评估记录.md` 第 10 节。
 
@@ -180,6 +228,7 @@ offline-factory-kb/
 ├── eval.py               分类别评估 + 报告（合并复核记录）
 ├── app.py                Gradio 界面（图片片段带缩略图和原图区）
 ├── start.bat             一键启动
+├── mcp_server/           MCP Server（server.py）、自测客户端（test_client.py / selftest.bat）
 ├── tests/                测试集 questions.json / questions_mm.json、盲写题存档、复核记录 review_*.json、校验和对比脚本
 ├── chroma_db/            向量库（运行 ingest.py 生成，不随仓库上传）
 ├── results/              评估结果 JSON / 报告（eval_v2_* 第二轮、eval_mm_* 图片题、eval_v3_* 原 82 题回归；threshold_test_v1.json 为第一轮 14 题留档）
@@ -201,6 +250,7 @@ offline-factory-kb/
 - 图片题只有 22 道、示意图是代码画的（比真实照片简单），识别准确率和问答准确率都只能说明"在这批图上"的表现。
 - 只支持 Markdown 资料和图片；扫描件 PDF 需要先 OCR（本 Demo 未实现，生产上可用离线 OCR 引擎处理后再入库）。
 - 单机单用户演示，没有做权限、并发和资料版本管理。
+- MCP Server：审计日志只记录参数合法的工具调用——被 Schema 拒绝的调用在进入工具函数之前就返回了，资源读取也没有记录；要做到每次请求都留痕需要在协议层统一记录。没有身份认证和按用户的资料权限（stdio 下 Server 以启动它的用户身份运行）。
 
 ## 许可证
 
